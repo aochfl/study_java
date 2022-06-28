@@ -10,3 +10,8 @@ java 수업을 진행하는동안 생성한 코드를 저장하기위한 프로�
 5교시 : 13:40 ~ 14:30   
 6교시 : 14:40 ~ 15:30   
 7교시 : 15:40 ~ 16:30   
+
+
+
+// cd $(CURRENT_DIRECTORY)
+// javac $(FILE_NAME) -encoding UTF-8

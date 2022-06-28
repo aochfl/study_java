@@ -18,17 +18,6 @@ class VarScanner{
 		
 		//System.out.println("당신의 BMI지수는 " + BMI + "입니다.");
 		System.out.printf("당신의 BMI지수는 %.1f 입니다.\n",BMI);
-		
-		/*
-		if(BMI <= 18.5)
-			fat = "저체중";
-		else if ( 18.5 < BMI&& BMI <= 22.9)
-			fat = "정상";
-		else if (22.9 < BMI && BMI<= 24.9)
-			fat = "과체중";
-		else
-			fat = "비만";
-		System.out.printf("당신의 BMI지수는 %.1f 이며 \"%s\" 입니다.\n",BMI,fat);
-		*/
+
 	}
 }

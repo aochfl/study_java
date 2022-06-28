@@ -1,18 +1,22 @@
 import java.util.Scanner; // 스캐너를 쓰기 위한 준비
 
 class VarScanner{
+	//in.nextByte()		// byte 형 입력 및 리턴
+	//in.nextShort()		// short 형 입력 및 리턴
+	//in.nextInt()		// int 형 입력 및 리턴
+	//in.nextLong()		// long 형 입력 및 리턴
+	// 
+	//in.nextFloat()		// float 형 입력 및 리턴
+	//in.nextDouble()		// double 형 입력 및 리턴
+	// 
+	//in.nextBoolean()	// boolean 형 입력 및 리턴
+	// 
+	//in.next()		// String 형 입력 및 리턴
+	//in.nextLine()		// String 형 입력 및 리턴
+	
 	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
-		
-		//System.out.print("첫번째 숫자를 입력하세요 : ");
-		//int i = sc.nextInt(); // 키보드로부터 정수를 받음
-		//System.out.print("두번째 숫자를 입력하세요 : ");
-		//int j = sc.nextInt(); 
-		//sc.nextDouble() 	// 키보드로부터 실수를 받음
-		//sc.next() 		// 또는 sc.nextLine()  문자열 받기
-		//sc.nextBoolean() 	// true false 받기
-		//System.out.println("입력받은 숫자의 합은 " + (i+j) + " 입니다.");
-		
+					
 		System.out.println("BMI 계산기");
 		System.out.println("~18.5 저체중 / 18.5 ~ 22.9 정상 / 23.0 ~ 24.9 과체중 / 25.0 ~ 비만");
 		

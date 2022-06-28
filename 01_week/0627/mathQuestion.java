@@ -1,6 +1,18 @@
 import java.util.Scanner;
 
 class mathQuestion{
+	//in.nextByte()		// byte 형 입력 및 리턴
+	//in.nextShort()	// short 형 입력 및 리턴
+	//in.nextInt()		// int 형 입력 및 리턴
+	//in.nextLong()		// long 형 입력 및 리턴
+	// 
+	//in.nextFloat()	// float 형 입력 및 리턴
+	//in.nextDouble()	// double 형 입력 및 리턴
+	// 
+	//in.nextBoolean()	// boolean 형 입력 및 리턴
+	// 
+	//in.next()		// String 형 입력 및 리턴
+	//in.nextLine()		// String 형 입력 및 리턴
 	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
 		

@@ -1,7 +1,7 @@
 06.27
 -----
 기본적인 java배경지식   
-pc세팅 (java, notepad++)
+pc세팅 (java, notepad++)   
 구문작성법   
 print문 작성법   
 변수들의 자료형   

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 실습</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        header{
+            background-color: gray;
+            text-align: center;
+            padding: 40px 0px 40px 0px;
+        }
+        section::after{
+            content:"";
+            display: table;
+            clear:both;
+        }
+        nav{
+            background-color: #aaa;
+            /* 공간을왼쪽으로 정렬 */
+            float:left; 
+            width: 30%;
+            height: 180px;
+        }
+        ul li{
+            list-style: none;
+            /* display: inline-block; */
+            margin: 5px 0px 0px 10px;
+        }
+        article{
+            background-color: #ccc;
+            float:left; 
+            width:70%;
+            height: 180px;
+            padding: 10px 0px 0px 10px;
+            line-height: 25px;
+        }
+        footer{
+            background-color: #999;
+            color:#fff;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>헤더</header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="https://naver.com" target="_blank"></a>런던</li>
+                <li><a href="#"></a>파리</li>
+                <li><a href="#"></a>도쿄</li>
+            </ul>
+        </nav>
+        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo autem in porro cupiditate recusandae voluptates corrupti at ea omnis tempora! Repellat, distinctio. Assumenda nam, porro vero inventore explicabo eum aut itaque. Odio, ipsa quidem tenetur quisquam ab non magni velit asperiores, officia quod totam ullam laboriosam debitis laborum quam sed.</article>
+    </section>
+    <footer>footer</footer>
+</body>
+</html>

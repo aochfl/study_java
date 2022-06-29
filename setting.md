@@ -25,3 +25,8 @@ java $(NAME_PART)
 15. 설정 메뉴탭 - 단축키 설정
 16. 약 140번째 항목쯤에 Ctrl+1, Ctrl+2로 등록된 단축키를삭제 (단축키는 원하는 대로 설정)
 17. 상단의 Plugin commands 탭에서 Compile과 Run을 찾아서 Ctrl+1,2로 설정(단축키는 원하는 대로 설정)
+
+* * *   
+vsCode
+======
+확장 프로그램 live server 

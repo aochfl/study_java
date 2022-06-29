@@ -1,3 +1,14 @@
+설치해야할 프로그램
+===
+Notepad++ 설치   
+vscode 설치   
+https://nodejs.org/ko/
+
+nodejs 설치   
+https://nodejs.org/ko/
+
+
+
 Notepad++ 설정
 =======
 1. 플러그인 메뉴탭 - Plugins Admin

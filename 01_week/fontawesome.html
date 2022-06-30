@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트어썸 이미지 삽입하기</title>
+    <!--폰트어썸에서 이미지를 사용하기 위해 입력-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        i {
+            font-size: 32px;
+        }
+        /* hover는 마우스오버상태일경우 */
+        .zoom:hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            color: yellow;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: red;
+            cursor: pointer;
+        }
+        /* active는 마우스 클릭 상태일경우 */
+        .close:active {
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="zoom"><i class="fa-solid fa-magnifying-glass"></i></span>
+    <span class="bar" id="bars"><i class="fa-solid fa-bars"></i></span>
+    <span class="close"><i class="fa-solid fa-xmark"></i></span>
+</body>
+
+</html>

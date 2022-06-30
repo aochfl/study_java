@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+/* 위까지는 무조건 작업 */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  padding: 15px 20px;
+  background-color: darkgrey;
+  display: flex; /* 가로 끝선 정렬*/
+  flex-direction: row; /*메뉴 가로로 만들때*/
+  justify-content: space-between; /* 내부 컨텐츠를 띄움 */
+}
+
+ul {
+  display: flex;
+}
+ul li {
+  padding-right: 40px;
+}
+a:hover {
+  color: tomato;
+  transition: 1s; /* 변화속도 수정 */
+}
+
+.search {
+  color: white;
+}
+.fa-solid {
+  cursor: pointer;
+}
+
+.fa-solid:hover {
+  color: tomato;
+  transition: 1.2s;
+}
+
+.btn {
+  display: none;
+}

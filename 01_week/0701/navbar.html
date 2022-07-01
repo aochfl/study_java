@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive Web Navbar</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            /* style css */
+            .navbar-wrap {
+                background-color: #46acc2;
+                display: flex;
+                flex-direction: row;
+                padding: 15px;
+                justify-content: space-between; /*가로정렬*/
+                box-shadow: 0 5px 5px #aaa;
+            }
+
+            .logo {
+                width: 100px;
+                cursor: pointer;
+            }
+
+            .navbar-left-items {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .toggle-btn > i {
+                display: none;
+                cursor: pointer;
+            }
+
+            .white-font-clr {
+                color: #fff;
+            }
+
+            ul {
+                color: white;
+            }
+            ul li {
+                margin-right: 30px;
+                color: white;
+            }
+            a {
+                color: white;
+            }
+            a:hover {
+                color: white;
+            }
+            .btn {
+                background-color: #fe9b8e;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 10px;
+                color: white;
+            }
+            .btn:hover {
+                background-color: #0c1451;
+                transition: 1s;
+            }
+
+            /* style css end */
+
+            /* media query css : width 600px */
+            @media (max-width: 600px) {
+                .navbar-wrap {
+                    background-color: #46acc2;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    justify-content: space-between; /*가로정렬*/
+                    box-shadow: 0 5px 5px #aaa;
+                }
+                .toggle-btn {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
+                .toggle-btn > i {
+                    display: block;
+                    color: #fff;
+                }
+                .navbar-left-items,
+                .navbar-right-items {
+                    display: none;
+                }
+                .navbar-left-items {
+                    flex-direction: column;
+                }
+                .showMenu {
+                    display: block;
+                }
+            }
+            /* media query css : width 600px end */
+        </style>
+    </head>
+    <body>
+        <div class="navbar-wrap">
+            <div class="navbar-logo white-font-clr">
+                <img src="./images/Samsung.png" class="logo" />
+            </div>
+            <div class="toggle-btn"><i class="fa-solid fa-bars"></i></div>
+            <ul class="navbar-left-items navbar-item">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="navbar-right-items white-font-clr navbar-item">
+                <button type="button" class="btn">Search</button>
+            </div>
+        </div>
+        <script>
+            function showMenu() {
+                console.log("toggle clicked");
+                let showItems = document.querySelectorAll(".navbar-item");
+                showItems.forEach((item) => item.classList.toggle("showMenu"));
+            }
+            document
+                .querySelector(".toggle-btn")
+                .addEventListener("click", showMenu);
+        </script>
+    </body>
+</html>

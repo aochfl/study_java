@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Beauty</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+            }
+
+            ul li {
+                margin-right: 30px;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            a:hover {
+                color: tomato;
+                transition: 1s;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 50px;
+                font-weight: 500;
+                font-size: 20px;
+                font-family: "Roboto", sans-serif;
+            }
+            .logo {
+                width: 150px;
+            }
+            .navbar-contact {
+                background-color: tomato;
+                border-radius: 10px;
+                color: white;
+                padding: 15px;
+                cursor: pointer;
+                /* font-weight: bold; */
+            }
+            .navbar-contact:hover {
+                background-color: darkblue;
+                transition: 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="navbar-logo">
+                <img src="./images/Samsung.png" class="logo" />
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gift Vouchers</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Massage</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Pages</a></li>
+            </ul>
+            <div class="navbar-contact">Get a Massage</div>
+        </nav>
+    </body>
+</html>

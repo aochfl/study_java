@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .image-wrap {
+                width: 300px;
+                height: 300px;
+                border: 10px solid lawngreen;
+                overflow: hidden;
+
+                box-sizing: border-box;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* border: solid; */
+            }
+
+            img:hover {
+                transform: scale(1.3);
+                transition: 0.5s;
+                cursor: pointer;
+            }
+
+            .btn {
+                border: 0;
+                background-color: transparent;
+                background-color: #f00;
+                color: 000000;
+                padding: 20px;
+                border-radius: 5px;
+                font-size: 20px;
+                cursor: pointer;
+                width: 300px;
+                margin-top: 5px;
+            }
+
+            .btn:hover {
+                background-color: rgba(255, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image-wrap">
+            <img src="./images/lemon.jpg" alt="" />
+        </div>
+        <div>
+            <button class="btn">Click Me!</button>
+        </div>
+        <script>
+            //1.  동작만들기
+            function msg() {
+                //alert("clicked");
+                console.log("clk");
+            }
+            //2. click event(실제 사용은 addEventListener)
+            // arrow function : 화살표 함수
+            // document.querySelector(".btn").addEventListener("click", () => {
+            //     msg();
+            // });
+
+            document
+                .querySelector(".btn")
+                .addEventListener("click", function () {
+                    msg();
+                });
+        </script>
+    </body>
+</html>

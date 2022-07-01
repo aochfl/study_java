@@ -28,5 +28,10 @@ class, id 할당방법
 
 07.01
 ------
-
+flex,를 이용한 복습(grid예습)   
+position (배치 : 절대배치)   
+javascript   
+예제진행   
+호스팅, ftp 업로드   
+스마트폰 테스트   
 ***

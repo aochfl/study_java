@@ -2,12 +2,12 @@
 ---
 1. switch-case   
 2. 반복문(for, while, do-while)   
-3. 
+3. for문 예제만들기
 
 
 07.05
 ---
-1
+1. while문 예제 만들기
 
 
 07.06

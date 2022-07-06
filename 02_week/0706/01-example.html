@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>01-Example</title>
+    </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .title,
+        .content {
+            text-align: center;
+            max-width: 100%;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .title {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        .content {
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 50px;
+        }
+        .itembox-wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 100%;
+            width: 80%;
+            margin: 0 auto;
+            max-height: 100%;
+            height: 50%;
+        }
+
+        .item {
+            width: 32%;
+            border: 1px solid transparent;
+            padding: 10px;
+        }
+        .item:hover {
+            transition: 2s;
+            background-color: rgb(210, 199, 185);
+        }
+
+        .item img {
+            width: 100%;
+            height: 70%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .itemtitle {
+            margin: 15px 0;
+        }
+        .itemcontent {
+            color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+    <body>
+        <header>
+            <div class="title">
+                <h1>Our Facilities</h1>
+            </div>
+            <div class="content">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Odit laborum, eum qui expedita asperiores assumenda totam
+                    placeat nobis accusamus deleniti!
+                </p>
+            </div>
+        </header>
+        <section>
+            <div class="itembox-wrap">
+                <div class="item">
+                    <img src="./images/library.jpg" alt="" />
+                    <h2 class="itemtitle">World Class Library</h2>
+                    <p class="itemcontent">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Porro, itaque?
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="./images/playground.jpg" alt="" />
+                    <h2 class="itemtitle">Largest Play Ground</h2>
+                    <p class="itemcontent">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sint, ex!
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="./images/foodcourt.jpg" alt="" />
+                    <h2 class="itemtitle">Tasty And Healthy Food</h2>
+                    <p class="itemcontent">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sint, ex!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

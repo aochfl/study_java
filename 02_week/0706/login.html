@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>부산it 웹사이트 로그인</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            ul li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            a:hover {
+                color: white;
+            }
+
+            input,
+            button {
+                border: 0;
+                outline: 0;
+            }
+
+            .login-box {
+                width: 400px;
+                /* background-color: red; */
+                margin: 40px auto;
+
+                padding: 5px;
+                border: 1px solid #000;
+            }
+
+            input {
+                border: 1px solid #999;
+                padding: 3px 5px;
+            }
+            button {
+                width: 100%;
+                background-color: red;
+                color: #fff;
+                padding: 8px 12px;
+                cursor: pointer;
+                border-radius: 5px;
+                border: 1px solid transparent;
+                margin: 5px;
+            }
+            button:hover {
+                background-color: transparent;
+                color: tomato;
+                border: 1px solid tomato;
+                transition: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- method 방식에서 post는 보안우선, get은 속도우선-->
+        <!-- action은 처리할 파일 이름 -->
+        <form method="post" action="처리할 파일 이름">
+            <div class="login-box">
+                <label for="userid">UserID:</label>
+                <input
+                    type="text"
+                    required
+                    placeholder="아이디를 입력하세요"
+                    name="userid"
+                /><br />
+                <label for="passwd">Password:</label>
+                <input
+                    type="password"
+                    required
+                    placeholder="비밀번호를 입력하세요"
+                    name="passwd"
+                /><br />
+                <!-- <input type="submit" value="Login" /> -->
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </body>
+</html>

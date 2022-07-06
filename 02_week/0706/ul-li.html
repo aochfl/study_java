@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ul li로 navbar 만들기</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        button {
+            border: 0;
+            outline: 0;
+        }
+        .container {
+            width: 1280px;
+            margin: 0 auto;
+            background-color: burlywood;
+        }
+
+        header {
+            padding: 30px;
+        }
+        header,
+        .icons-wrap,
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 28px;
+            text-transform: capitalize;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        ul li a:hover {
+            color: tomato;
+            transition: 0.6s;
+        }
+
+        .icon {
+            background-color: #ccc;
+            margin-right: 5px;
+            cursor: pointer;
+
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .icon:hover {
+            background-color: orange;
+            color: white;
+            transition: 1s;
+        }
+
+        .hero {
+            background-image: url("./images/cook_l.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 700px;
+        }
+        .hero-content {
+            width: 800px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .hero-content .btn {
+            background-color: transparent;
+            border-radius: 5px;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        .hero-content .btn:hover {
+            background-color: tomato;
+            transition: 0.7s;
+            color: #fff;
+            border: 1px solid transparent;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>groco</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Review</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+                <div class="icons-wrap">
+                    <div class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <section class="hero">
+            <div class="hero-content">
+                <button class="btn">Shop Now</button>
+            </div>
+        </section>
+    </body>
+</html>

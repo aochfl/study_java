@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>제목</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            ul li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            a:hover {
+                color: white;
+            }
+
+            body {
+                font-family: "Roboto", sans-serif;
+            }
+
+            .box-wrap {
+                background-color: #ccc;
+                padding: 50px 0;
+            }
+            .box {
+                text-align: center;
+                width: 1400px;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .box > .subtitle {
+                font-size: 24px;
+            }
+            .box > h3 {
+                font-size: 45px;
+            }
+
+            .box > .content {
+                color: rgba(0, 0, 0, 0.5);
+                width: 600px;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .icon-box-wrap {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 10px 0;
+            }
+            .icon-box {
+                width: 32%;
+            }
+            .icon-box > h4 {
+                font-size: 22px;
+                margin: 10px 0;
+            }
+            .icon-box > p {
+                color: rgba(0, 0, 0, 0.5);
+            }
+            .icon-wrap {
+                color: white;
+            }
+
+            @media (max-width: 400px) {
+                .box-wrap {
+                    padding: 50px 10px;
+                }
+                .box {
+                    text-align: center;
+                    width: 1400px;
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+
+                .box > .subtitle {
+                    font-size: 16px;
+                }
+                .box > h3 {
+                    font-size: 25px;
+                    margin: 10px 0 auto;
+                }
+                .box > .content {
+                    color: rgba(0, 0, 0, 0.5);
+                    max-width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box-wrap">
+            <div class="box">
+                <p class="subtitle">WHAT WE DO</p>
+                <h3>We have the knowledge and experience</h3>
+                <p class="content">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Omnis totam perspiciatis porro eos molestias incidunt fugit,
+                    vitae, delectus eius id voluptatibus cupiditate. Reiciendis
+                    maxime eum corrupti placeat suscipit, neque itaque?
+                </p>
+
+                <!-- icon box -->
+                <div class="icon-box-wrap">
+                    <div class="icon-box">
+                        <div class="icons">
+                            <span class="icon-wrap">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </span>
+                        </div>
+                        <h4>VISUALIZE IT</h4>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Repellendus, ipsum.
+                        </p>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icons">
+                            <span class="icon-wrap">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </span>
+                        </div>
+                        <h4>VISUALIZE IT</h4>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Repellendus, ipsum.
+                        </p>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icons">
+                            <span class="icon-wrap">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </span>
+                        </div>
+                        <h4>VISUALIZE IT</h4>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Repellendus, ipsum.
+                        </p>
+                    </div>
+                </div>
+                <!-- icon box 끝 -->
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            .div-align-center {
+                width: 1630px;
+                margin: 0 auto;
+            }
+            .boxwrap {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .box {
+                width: 400px;
+                margin-bottom: 10px;
+                /* border: 1px solid #000; */
+            }
+            .box-img img {
+                width: 100%;
+            }
+            .item-price {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .old-price {
+                color: red;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            .new-price {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .right-icon {
+                background-color: tomato;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 3px;
+            }
+            .right-icon:hover {
+                background-color: #ccc;
+                transition: 0.5s;
+            }
+            .right-icon i {
+                color: #fff;
+                font-size: 20px;
+            }
+            .right-icon i:hover {
+                color: tomato;
+                transition: 0.5s;
+            }
+            @media (max-width: 400px) {
+                .div-align-center {
+                    width: 1630px;
+                    margin: 0 auto;
+                }
+                .boxwrap {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                }
+                .box {
+                    background-color: tomato;
+                    width: 400px;
+                    height: 300px;
+                    margin-bottom: 10px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="div-align-center">
+            <div class="boxwrap">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="./images/f1.jpg" alt="" />
+                    </div>
+                    <div class="box-detail">
+                        <div class="item-title">제목</div>
+                        <div class="item-price">
+                            <div class="left-price">
+                                <span class="old-price"><del>$99.00</del></span>
+                                <span class="new-price">$88.98</span>
+                            </div>
+                            <div class="right-icon">
+                                <div class="item-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+                <div class="box">이미지</div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>가로 세로 : position:absolute;</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+            body {
+                background-color: aquamarine;
+                font-family: "Lato", sans-serif;
+            }
+            .login-box-wrap {
+                position: absolute;
+                top: calc(50% - 150px);
+                left: calc(50% - 200px);
+            }
+            .login-box {
+                background-color: #fff;
+                /* display: inline-block; */
+                width: 400px;
+                height: 300px;
+                border-radius: 10px;
+                padding: 40px;
+            }
+
+            .login-box h3 {
+                text-align: center;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-box-wrap">
+            <form
+                method="post"
+                action="login_process.do"
+                enctype="multipart/form-data"
+                name="frm"
+                id="frm"
+                class="frm"
+            >
+                <div class="login-box">
+                    <h3>LOGIN <span>BOX</span></h3>
+                    <div class="userid-wrap">
+                        <i class="fa-solid fa-image-portrait"></i>
+                        <label for="userid">ID</label>
+                        <input
+                            type="text"
+                            required
+                            name="userid"
+                            class="userid"
+                            id="userid"
+                            maxlength="12"
+                            placeholder="Insert ID..."
+                        />
+                    </div>
+                    <div class="passwd-wrap">
+                        <i class="fa-solid fa-key"></i>
+                        <span>PW</span>
+                        <input
+                            type="password"
+                            required
+                            name="passwd"
+                            class="passwd"
+                            id="passwd"
+                            maxlength="8"
+                            placeholder="Insert pw..."
+                        />
+                    </div>
+                    <div class="button-wrap">
+                        <button type="submit">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

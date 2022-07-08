@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Table Ex</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
+
+            body {
+                font-family: "Montserrat", sans-serif;
+                background-color: rgb(201, 241, 198);
+            }
+            .table-wrap {
+                width: 70%;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+            table {
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                cursor: default;
+                box-shadow: 0 0 10px black;
+            }
+            tr {
+                height: 50px;
+            }
+            th {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+            }
+            td {
+                color: rgba(0, 0, 0, 0.7);
+            }
+            td:first-child {
+                width: 20%;
+            }
+            tr:nth-child(2n) {
+                background-color: #fff;
+            }
+
+            tr:nth-child(odd) {
+                background-color: rgba(0, 255, 0, 0.2);
+            }
+            tr:hover {
+                background-color: rgba(0, 255, 0, 0.6);
+                color: rgba(0, 0, 0, 1);
+                font-style: bold;
+            }
+
+            .table-bottom {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .table-bottom select {
+                background-color: white;
+                height: 28px;
+                border: 1px solid black;
+                cursor: pointer;
+            }
+            .table-bottom input {
+                background-color: white;
+                border: 1px solid #000;
+                height: 28px;
+                width: 150px;
+            }
+            .table-bottom button {
+                cursor: pointer;
+                background-color: rgba(0, 255, 0, 0.6);
+                border: 1px solid transparent;
+                border-radius: 3px;
+                line-height: 20px;
+                padding: 3px 5px;
+            }
+            .table-bottom button:hover {
+                background-color: white;
+                border: 1px solid rgba(0, 255, 0, 0.6);
+                transition: 0.3s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="table-wrap">
+            <div class="table-top"></div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednsday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+                <tr>
+                    <td>1열</td>
+                    <td>8:00AM</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>8:00AM</td>
+                    <td>-</td>
+                    <td>5:00PM</td>
+                    <td>8:00AM</td>
+                </tr>
+                <tr>
+                    <td>2열</td>
+                    <td>-</td>
+                    <td>5:00PM</td>
+                    <td>5:00PM</td>
+                    <td>-</td>
+                    <td>9:00AM</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>3열</td>
+                    <td>8:00AM</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>8:00AM</td>
+                    <td>-</td>
+                    <td>5:00PM</td>
+                    <td>8:00AM</td>
+                </tr>
+                <tr>
+                    <td>4열</td>
+                    <td>-</td>
+                    <td>5:00PM</td>
+                    <td>5:00PM</td>
+                    <td>-</td>
+                    <td>9:00AM</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+            <div class="table-bottom">
+                <span class="this-page">1 페이지</span>
+                <div class="page-list">1</div>
+                <form action="search.do">
+                    <div class="search-wrap">
+                        <select>
+                            <option>제목</option>
+                            <option>닉네임</option>
+                            <option>내용</option>
+                        </select>
+                        <input type="text" name="searchinput" required />
+                        <button type="submit">검색</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: white;
+}
+
+input,
+button,
+select {
+    border: 0;
+    /* 커서가 활성화되었을때 테두리강조효과 */
+    outline: 0;
+    background-color: transparent;
+}
+table {
+    /* 표 서식에 2줄로 나오는것을 1줄로 변경 */
+    border-collapse: collapse;
+}

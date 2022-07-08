@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home > 게시판 > 공지사항 > 목록보기</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+            body {
+                font-size: 14px;
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            .page-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 30px;
+                margin-bottom: 5px;
+            }
+            .page-top h2 {
+                font-size: 14px;
+            }
+            .tbl-warp {
+                width: 80%;
+                margin: 0 auto;
+            }
+            table {
+                width: 100%;
+            }
+
+            tr:first-child {
+                height: 50px;
+                text-align: center;
+                font-weight: bold;
+                background-color: #aaa;
+            }
+            tr:nth-child(2) {
+                height: 50px;
+                border-bottom: 1px solid #ccc;
+                text-align: center;
+            }
+            tr:nth-child(2):hover {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+            td:first-child {
+                width: 10%;
+            }
+            td:nth-child(2) {
+                width: 50%;
+            }
+            td:nth-child(3) {
+                width: 10%;
+            }
+            td:nth-child(4) {
+                width: 10%;
+            }
+            td:last-child {
+                width: 10%;
+            }
+            .page-bottom {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .page-bottom {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                margin-top: 5px;
+            }
+            .start-num {
+                background-color: tomato;
+                color: #fff;
+                /* 인라인을 블록타입처럼 사용할때 사용 - 인라인은 width,height 설정이 안되기 때문 */
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid transparent;
+            }
+            .start-num:hover {
+                color: tomato;
+                background-color: #fff;
+                border: 1px solid tomato;
+                transition: 0.3s;
+            }
+            select {
+                width: 120px;
+                height: 30px;
+                border: 1px solid #ccc;
+            }
+            input {
+                height: 30px;
+                width: 150px;
+                border: 1px solid #ccc;
+            }
+            button {
+                background-color: tomato;
+                color: #fff;
+                padding: 6px 12px;
+                border-radius: 3px;
+                vertical-align: bottom;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tbl-warp">
+            <div class="page-top">
+                <h2>Home > Board > Notice</h2>
+                <span class="total">
+                    전체게시물 :<strong>11111111건</strong>
+                </span>
+            </div>
+            <table>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>글쓴이</td>
+                    <td>조회</td>
+                    <td>날짜</td>
+                </tr>
+                <!--for 반복-->
+                <tr>
+                    <td>1</td>
+                    <td style="text-align: left">
+                        <strong>안녕하세요 Lorem ipsum dolor sit amet.</strong>
+                    </td>
+                    <td>글쓴이</td>
+                    <td>50</td>
+                    <td>2022-07-08</td>
+                </tr>
+                <!--for 반복-->
+            </table>
+            <!-- paging, pagination -->
+            <div class="page-bottom">
+                <div class="page-warp">
+                    <span class="start-num">1</span>
+                </div>
+                <form
+                    method="get"
+                    action="boardSearch.do"
+                    name="frm"
+                    class="frm"
+                >
+                    <div class="page-search">
+                        <!-- <input type="radio" name="open" /> 공개게시물
+                        <input type="radio" name="open" /> 비공개게시물
+
+                        <input type="checkbox" name="fishing" /> 낚시
+                        <input type="checkbox" name="clibing" /> 등산
+                        <input type="checkbox" name="reading" /> 독서 -->
+
+                        <select>
+                            <option>제목</option>
+                            <option>제목+내용</option>
+                            <option>글쓴이</option>
+                        </select>
+                        <input type="text" required />
+                        <button type="submit">검색</button>
+                    </div>
+                </form>
+
+                <div class="page-btn">
+                    <button type="button">글쓰기</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>가로세로정렬 : flex - position</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <style>
+            /* 넓이, 높이가 무조건 100%로 설정되어있음 */
+            body {
+                background-color: aquamarine;
+            }
+
+            .login-box-wrap {
+                display: flex;
+                /* 가로 */
+                justify-content: center;
+                /* 세로 */
+                align-items: center;
+                /* 디바이스 높이에 맞게 무조건 세로로 채움 */
+                height: 100vh;
+            }
+            .login-box {
+                background-color: #fff;
+                /* display: inline-block; */
+                width: 400px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-box-wrap">
+            <div class="login-box">로그인정보</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+가로배치
+1. float 배치 -> float 해제
+2. display: inline-block; 사이에 여백 : margin-left
+3. flex -> 반응형
+4. grid layout
+* inline 타입 : span, a
+
+inline 타입 : a, span, img, form, input 
+block 타입 : 그외
+
+가로,세로 중앙 배치방법
+1. flex
+2. position
+
+배경위에 글자나 이미지 배치방법
+1. background
+2. position : 절대위치, 상대위치
+
+form : input, radio, checkbox, textarea
+method 
+ - get : 속도우선, url에 표시된다
+ - post : 보안을 우선
+
+ action : 입력내용을 처리하는 페이지
+ encType : multipart/form-data -> 첨부파일
+
+ Login, Logout, Register -> 보안(auth)
+
+ insert.do List.do View.do Update.do Delete.do
+
+ table 만들기
+ table 표전체
+    tr 줄
+        th 칸(진한 글씨가 나오는 칸)
+        td 칸

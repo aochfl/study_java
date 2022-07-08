@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Kristi&family=Lato&display=swap");
+
+            .hero-img {
+                background-image: url("./images/spagetti.jpg");
+                width: 100vw;
+                height: 100vh;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+            }
+            .title-wrap {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                position: absolute;
+                top: 10px;
+                left: 3%;
+                right: 3%;
+            }
+            .title-logo {
+                color: #fff;
+                font-size: 20px;
+            }
+            .title-menu-wrap {
+                display: flex;
+                flex-direction: row;
+                color: #fff;
+            }
+            .title-menu {
+                font-family: "Lato", sans-serif;
+                color: #fff;
+                font-size: 20px;
+                margin: 10px;
+            }
+            .hero-title-flex {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 90vh;
+                width: 100vw;
+            }
+            .hero-title {
+                text-align: center;
+            }
+            .hero-title h2 {
+                font-family: "Kristi", cursive;
+                font-size: 150px;
+                color: white;
+            }
+            .hero-title span {
+                font-size: 24px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero-img">
+            <nav>
+                <div class="title-wrap">
+                    <div class="title-logo">
+                        <span>LOGO</span>
+                    </div>
+                    <div class="title-menu-wrap">
+                        <div class="title-menu">HOME</div>
+                        <div class="title-menu">RESTO</div>
+                        <div class="title-menu">MENU</div>
+                        <div class="title-menu">SPECIAL</div>
+                        <div class="title-menu">RESERVATION</div>
+                        <div class="title-menu">GALLERY</div>
+                        <div class="title-menu">CONTACT</div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="hero-title-flex">
+                <div class="hero-title">
+                    <h2>delicious italian food</h2>
+                    <span>MAKING DELICIOS ITALIAN FOOD SINCE 1990</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

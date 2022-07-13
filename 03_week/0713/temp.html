@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>테이블 리스트</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            ul li {
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            a:hover {
+                color: white;
+            }
+            input,
+            button,
+            select {
+                border: 0;
+                /* 커서가 활성화되었을때 테두리강조효과 */
+                outline: 0;
+                background-color: transparent;
+            }
+            table {
+                /* 표 서식에 2줄로 나오는것을 1줄로 변경 */
+                border-collapse: collapse;
+                width: 100%;
+            }
+            /* 리셋코드 */
+
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+                font-size: 12px;
+            }
+            .en {
+                font-family: "Open Sans", sans-serif;
+            }
+
+            .board-wrap {
+                /* margin-left: 5%;
+                margin-right: 5%; */
+                padding: 20px;
+            }
+            .top-wrap,
+            .bottom-wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            input,
+            select,
+            button {
+                border: 1px solid #c7c7c7;
+                border-radius: 2px;
+                padding: 4px 6px;
+                font-size: 10px;
+            }
+            button {
+                color: #fff;
+                background-color: tomato;
+                border: 0px;
+            }
+
+            tr {
+                border-bottom: 1px solid #c7c7c7;
+                border-left: 1px solid #c7c7c7;
+                border-right: 1px solid #c7c7c7;
+                height: 35px;
+                text-align: center;
+            }
+            tr:first-child {
+                height: 3px;
+                background-color: #000;
+            }
+            td:nth-child(2) {
+                text-align: left;
+            }
+
+            /* .paging span {
+                background-color: tomato;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+            } */
+
+            .paging {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .paging div {
+                width: 20px;
+                height: 20px;
+                /* color: #fff; */
+                /* background-color: tomato; */
+                text-align: center;
+                line-height: 20px;
+
+                box-shadow: 0 0 0 1px #ccc;
+                background-color: #fff;
+            }
+            .paging div:first-child {
+                border: 1px solid #ccc;
+                border-right: 0px;
+            }
+            .paging div:nth-child(2) {
+                border: 1px solid #ccc;
+            }
+            .paging div:last-child {
+                border: 1px solid #ccc;
+                border-left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="board-wrap">
+            <div class="top-wrap">
+                <div class="left en">Home > Notice</div>
+                <div class="right">
+                    <form method="post" action="result.do">
+                        <select name="search">
+                            <option>검색조건</option>
+                            <option value="subject">제목</option>
+                            <option value="writer">작성자</option>
+                            <option value="content">내용</option>
+                        </select>
+                        <input
+                            type="text"
+                            name="words"
+                            placeholder="검색어를 입력하세요."
+                        />
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>search
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tbl-wrap">
+                <table>
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>게시물 두번째 글입니다.</td>
+                        <td>관리자</td>
+                        <td>2022.07.12</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>게시물 1번째 글입니다.</td>
+                        <td>관리자</td>
+                        <td>2022.07.1</td>
+                        <td>500</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="bottom-wrap">
+                <div class="paging">
+                    <div class="left-arrow">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                    <div class="number">1</div>
+                    <div class="right-arrow">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+                <div class="btn">버튼</div>
+            </div>
+        </div>
+    </body>
+</html>

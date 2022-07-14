@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All check, All unCheck</title>
+    </head>
+    <body>
+        <div>
+            <input
+                type="checkbox"
+                class=""
+                id="chkAll"
+                onClick="selectAll()"
+            />전체선택
+        </div>
+        <div>
+            <input type="checkbox" class="chk" id="" />
+        </div>
+        <div>
+            <input type="checkbox" class="chk" id="" />
+        </div>
+        <div>
+            <input type="checkbox" class="chk" id="" />
+        </div>
+        <div>
+            <input type="checkbox" class="chk" id="" />
+        </div>
+        <div>
+            <input type="checkbox" class="chk" id="" />
+        </div>
+    </body>
+    <script>
+        function selectAll() {
+            if (document.querySelector("#chkAll").checked == true) {
+                for (
+                    let i = 0;
+                    i < document.querySelectorAll(".chk").length;
+                    i++
+                ) {
+                    document.getElementsByClassName("chk")[i].checked = true;
+                }
+            } else {
+                for (
+                    let i = 0;
+                    i < document.querySelectorAll(".chk").length;
+                    i++
+                ) {
+                    document.getElementsByClassName("chk")[i].checked = false;
+                }
+            }
+        }
+    </script>
+</html>

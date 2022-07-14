@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .navbar-wrap {
+                display: block;
+            }
+            .onOff {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>logo</h1>
+            <div class="navbar-wrap" id="navbar-wrap">
+                <ul>
+                    <li><a href="">Menu1</a></li>
+                    <li><a href="">Menu2</a></li>
+                    <li><a href="">Menu3</a></li>
+                    <li><a href="">Menu4</a></li>
+                    <li><a href="">Menu5</a></li>
+                </ul>
+            </div>
+            <button type="toggle" id="tgBtn" class="tgBtn">버튼</button>
+        </div>
+    </body>
+    <script>
+        function onOff() {
+            document.getElementById("navbar-wrap").classList.toggle("onOff");
+        }
+
+        document.getElementById("tgBtn").addEventListener("click", onOff);
+    </script>
+</html>

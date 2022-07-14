@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kristi&family=Lato:wght@400;700&family=Lora:ital@1&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* reset 동작 */
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            ul li {
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.7);
+            }
+            a:hover {
+                color: white;
+            }
+            input,
+            button,
+            select {
+                border: 0;
+                /* 커서가 활성화되었을때 테두리강조효과 */
+                outline: 0;
+                background-color: transparent;
+            }
+            table {
+                /* 표 서식에 2줄로 나오는것을 1줄로 변경 */
+                border-collapse: collapse;
+                width: 100%;
+            }
+            /* reset 동작 끝 */
+
+            body {
+                background-color: #e7e7e7;
+                font-family: "Lato", sans-serif;
+            }
+
+            .login-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .login-box {
+                background-color: #fff;
+                box-shadow: 0 0 10px 3px pink;
+                padding: 40px 50px;
+                border: 1px solid rgba(34, 36, 38, 0.2);
+                border-radius: 7px;
+                width: 500px;
+            }
+            .login-box h1 {
+                margin-bottom: 10px;
+            }
+            label {
+                font-weight: bold;
+            }
+            input {
+                border: 1px solid #d1d1d1;
+                border-radius: 3px;
+                width: 100%;
+                padding: 12px 6px;
+            }
+            .userid,
+            .password {
+                margin-top: 4px;
+                margin-bottom: 8px;
+            }
+
+            .loginBtn {
+                border: 0;
+                color: white;
+                background-color: tomato;
+                padding: 12px 16px;
+                font-size: 16px;
+                border-radius: 3px;
+                float: right;
+                cursor: pointer;
+            }
+
+            ::placeholder {
+                color: rgba(255, 0, 0, 0.7);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-wrap">
+            <div class="login-box">
+                <h1>Login</h1>
+                <form
+                    method="post"
+                    action="../admin/index.html"
+                    name=""
+                    enctype="multipart/form-data"
+                >
+                    <div class="login-form">
+                        <label>Userid</label>
+                        <input
+                            type="text"
+                            name="userid"
+                            class="userid"
+                            id="userid"
+                            placeholder="UserID"
+                            required
+                        />
+                        <label> Password </label>
+                        <input
+                            type="password"
+                            name="password"
+                            class="password"
+                            id="password"
+                            placeholder="Password"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <a href="sign.html"
+                            ><b>Don't you have an account?</b></a
+                        >
+                    </div>
+                    <div>
+                        <button type="submit" class="loginBtn" id="loginBtn">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        const inputId = document.getElementById("userid");
+        const inputPw = document.getElementById("password");
+        function login() {
+            console.log(inputId.value);
+            console.log(inputPw.value);
+        }
+
+        document.getElementById("loginBtn").addEventListener("click", login);
+    </script>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign In</title>
+        <style>
+            /* reset 동작 */
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            ul li {
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.7);
+            }
+            a:hover {
+                color: red;
+            }
+            input,
+            button,
+            select {
+                border: 0;
+                /* 커서가 활성화되었을때 테두리강조효과 */
+                outline: 0;
+                background-color: transparent;
+            }
+            table {
+                /* 표 서식에 2줄로 나오는것을 1줄로 변경 */
+                border-collapse: collapse;
+                width: 100%;
+            }
+            /* reset 동작 끝 */
+
+            body {
+                background-color: #e7e7e7;
+                font-family: "Lato", sans-serif;
+            }
+
+            .signin-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .signin-box {
+                background-color: #fff;
+                box-shadow: 0 0 10px 3px pink;
+                padding: 40px 50px;
+                border: 1px solid rgba(34, 36, 38, 0.2);
+                border-radius: 7px;
+                width: 500px;
+            }
+            .signin-box h1 {
+                margin-bottom: 20px;
+            }
+            label {
+                font-weight: bold;
+            }
+            input {
+                border: 1px solid #d1d1d1;
+                border-radius: 3px;
+                width: 100%;
+                padding: 12px 6px;
+            }
+            .username,
+            .identification,
+            .password,
+            .re-password {
+                margin-top: 4px;
+                margin-bottom: 15px;
+            }
+
+            .signInBtn {
+                border: 0;
+                color: white;
+                background-color: tomato;
+                padding: 12px 16px;
+                font-size: 16px;
+                border-radius: 3px;
+                float: right;
+                cursor: pointer;
+            }
+
+            ::placeholder {
+                color: rgba(255, 0, 0, 0.7);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="signin-wrap">
+            <div class="signin-box">
+                <h1>Sign In</h1>
+                <form
+                    method="post"
+                    action="login.html"
+                    name=""
+                    enctype="multipart/form-data"
+                >
+                    <div class="signin-form">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            name="username"
+                            class="username"
+                            id="username"
+                            placeholder="Username"
+                            required
+                        />
+                        <label>Identification</label>
+                        <input
+                            type="text"
+                            name="identification"
+                            class="identification"
+                            id="identification"
+                            placeholder="Identification"
+                        />
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            class="password"
+                            id="password"
+                            placeholder="Password"
+                            required
+                        />
+                        <label>Re-password</label>
+                        <input
+                            type="password"
+                            name="re-password"
+                            class="re-password"
+                            id="re-password"
+                            placeholder="Re-Password"
+                            required
+                        />
+                        <div>
+                            <a href="login.html"
+                                ><b>Already registerd sign up?</b></a
+                            >
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                class="signInBtn"
+                                id="signInBtn"
+                            >
+                                Sign in
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        const inputName = document.getElementById("username");
+        const inputIdentification = document.getElementById("identification");
+        const inputPasswd = document.getElementById("password");
+        const inputRePasswd = document.getElementById("re-password");
+
+        function signIn() {
+            if (inputPasswd.value != inputRePasswd.value) {
+                alert("입력하신 패스워드가 일치하지 않습니다");
+            }
+        }
+
+        document.getElementById("signInBtn").addEventListener("click", signIn);
+    </script>
+</html>

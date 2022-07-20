@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex Layout01</title>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <style>
+            .container {
+                background-color: steelblue;
+                display: flex;
+                justify-content: space-between;
+
+                height: 100vh;
+                align-items: inherit;
+
+                /* flex-direction: row-reverse; */
+                /* flex-direction: column; */
+            }
+            .item {
+                width: 100px;
+                height: 100px;
+                background-color: tomato;
+                color: white;
+                /* margin: 10px; */
+                padding: 20px;
+            }
+            .item:first-child {
+                /* align-self: flex-end; */
+                order: 3;
+            }
+            .item:nth-child(2) {
+                order: 1;
+            }
+            .item:last-child {
+                /* align-self: center; */
+                order: 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">box 1</div>
+            <div class="item">box 2</div>
+            <div class="item">box 3</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap");
+            body {
+                font-family: "Open Sans", sans-serif;
+                /* font-size: 14px; */
+                font-size: 0.875rem;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 100px 200px 300px;
+                grid-template-columns: repeat(3, 1fr);
+                /* column-gap: 10px; */
+                /* row-gap: 20px; */
+                gap: 20px;
+            }
+            .item {
+                padding: 20px;
+                background-color: steelblue;
+                color: #fff;
+                border: 1px solid skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">box 1</div>
+            <div class="item">box 2</div>
+            <div class="item">box 3</div>
+            <div class="item">box 4</div>
+            <div class="item">box 5</div>
+            <div class="item">box 6</div>
+            <div class="item">box 7</div>
+            <div class="item">box 8</div>
+            <div class="item">box 9</div>
+        </div>
+    </body>
+</html>

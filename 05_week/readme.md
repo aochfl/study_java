@@ -7,3 +7,9 @@
 07.26
 ===
 1. 상속관계 반복학습
+
+
+07.27
+===
+1. java-script : slice 사용법
+2. html : 팝업 (child, parent)

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>입력폼 체크(basic)</title>
+        <style>
+            /* reset 동작 */
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            ul li {
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            a:hover {
+                color: white;
+            }
+            input,
+            button,
+            select {
+                border: 0;
+                /* 커서가 활성화되었을때 테두리강조효과 */
+                outline: 0;
+                background-color: transparent;
+            }
+            table {
+                /* 표 서식에 2줄로 나오는것을 1줄로 변경 */
+                border-collapse: collapse;
+                width: 100%;
+            }
+            /* reset 동작 끝 */
+
+            body {
+                background-color: #d1d1d1;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 10px 20px;
+            }
+
+            h2 {
+                margin-bottom: 10px;
+            }
+            input {
+                outline: none;
+                border: 1px solid #c1c1c1;
+                width: 100%;
+                padding: 5px;
+                margin-bottom: 5px;
+            }
+            ::placeholder {
+                color: red;
+                font-size: 12px;
+                padding: 0 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <h2>Login</h2>
+                <form
+                    method="post"
+                    action="login_check.do"
+                    name="frm"
+                    id="frm"
+                    class="frm"
+                    enctype="multipart/form-data"
+                    onsubmit="return validateFormCheck();"
+                >
+                    <input
+                        type="text"
+                        name="userid"
+                        id="userid"
+                        class="userid"
+                        placeholder="아이디를 입력하세요"
+                    />
+                    <br />
+                    <input
+                        type="password"
+                        name="password"
+                        id="passwd"
+                        class="passwd"
+                        placeholder="비밀번호를 입력하세요"
+                    />
+                    <br />
+                    <!-- <input type="submit" value="로그인" /> -->
+                    <button type="submit">로그인</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        function validateFormCheck() {
+            //document.getElementById("userid").value;
+            // document.form이름.name이름.value
+            let userid = document.frm.userid;
+            let passwd = document.frm.passwd;
+
+            // return false = preventDefault() : 페이지 전환 X ;
+            if (userid.value === null || userid.value === "") {
+                alert("아이디를 입력하세요.");
+                userid.focus();
+                return false;
+            }
+            if (passwd.value === null || passwd.value === "") {
+                alert("비밀번호를 입력하세요.");
+                passwd.focus();
+                return false;
+            }
+            if (passwd.value.length < 8) {
+                alert("비밀번호는 최소 8자리 이상이 되어야 합니다.");
+                passwd.value = "";
+                passwd.focus();
+                return false;
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>부산아이티 메인페이지입니다</title>
+    </head>
+    <body>
+        <button onClick="popupOpen('./10-child_pop.html','',500,400);">팝업열기</button>
+        <script>
+            function popupOpen() {
+                /* popupOpen(자식파일이름, 별명, 옵션) */
+                //window.open("./10-child_pop.html", "", "");
+            }
+            function popupOpen(url, nick, width, height) {
+                let left = (screen.availWidth - width) / 2;
+                let top = (screen.availHeight - height) / 2;
+                let screenVal = "left=" + left + ", top=" + top + ", width=" + width + ", height=" + height;
+
+                window.open(url, nick, screenVal);
+            }
+        </script>
+    </body>
+</html>

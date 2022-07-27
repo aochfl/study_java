@@ -12,7 +12,8 @@
 07.27
 ===
 html : 
-  1. 팝업 (child, parent)
+  1. 팝업 (child, parent)    
+
 java-script : 
   1. slice 사용법
   2. 정규식 사용법

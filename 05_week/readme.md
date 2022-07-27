@@ -11,5 +11,10 @@
 
 07.27
 ===
-1. java-script : slice 사용법
-2. html : 팝업 (child, parent)
+html : 
+  1. 팝업 (child, parent)
+java-script : 
+  1. slice 사용법
+  2. 정규식 사용법
+  3. js에서 객체에 class 부여방법
+  4. form 제어

@@ -19,3 +19,12 @@ java-script :
   2. 정규식 사용법
   3. js에서 객체에 class 부여방법
   4. form 제어
+
+
+07.28
+===
+1. mouse 이벤트 
+2. list 추가 
+3. input (selector, radio, check)
+4. 배열관리
+5. Node 기본

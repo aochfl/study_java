@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+            body {
+                font-family: "Noto Sans KR", sans-serif;
+            }
+            .container {
+                padding: 20px;
+            }
+            h4 {
+                margin-bottom: 5px;
+            }
+            .sel {
+                width: 100%;
+                border: 1px solid tomato;
+                color: tomato;
+                font-size: 16px;
+                border-radius: 3px;
+                outline: 0;
+                padding: 8px;
+                margin-bottom: 5px;
+            }
+            .search {
+                width: 100%;
+                border: 1px solid #c1c1c1;
+                color: #555;
+                font-size: 16px;
+                border-radius: 3px;
+                outline: 0;
+                font-family: inherit;
+                padding: 8px;
+                margin-bottom: 5px;
+            }
+            .button {
+                background-color: tomato;
+                border: 0px;
+                color: white;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 3px;
+                padding: 6px 12px;
+                font-family: inherit;
+                outline: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h4>검색타입을 선택하세요</h4>
+            <form id="frm" action="search.do">
+                <!-- select > option > value -->
+                <select name="" id="sel" class="sel">
+                    <option value="1">제목+내용</option>
+                    <option value="2">제목</option>
+                    <option value="3">내용</option>
+                    <option value="4">작성자</option>
+                </select>
+                <input type="text" id="search" class="search" />
+                <button class="button">검색</button>
+            </form>
+        </div>
+        <script>
+            function selectValidate() {
+                if (document.getElementById("sel").value === "") {
+                    alert("검색타입을 선택해주세요");
+                    return false;
+                }
+
+                if (document.getElementById("search").value.trim() === "") {
+                    alert("검색어를 입력해주세요");
+                    document.getElementById("search").focus();
+                    return false;
+                }
+
+                return true;
+            }
+
+            document.getElementById("frm").addEventListener("submit", (e) => {
+                e.preventDefault();
+                selectValidate();
+            });
+        </script>
+    </body>
+</html>

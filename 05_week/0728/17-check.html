@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+            body {
+                font-family: "Noto Sans KR", sans-serif;
+            }
+            .container {
+                padding: 20px;
+            }
+
+            .agree {
+                width: 100%;
+                height: 300px;
+                background-color: #c1c1c1;
+                border: 1px solid #a1a1a1;
+                padding: 10px;
+            }
+            h4 {
+                margin-bottom: 5px;
+            }
+
+            .chkGrp {
+                display: flex;
+                align-items: center;
+                height: 50px;
+            }
+            input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+            }
+
+            .chkGrp span {
+                margin-left: 5px;
+                margin-right: 10px;
+            }
+            button {
+                background-color: tomato;
+                border: 0px;
+                color: white;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 3px;
+                padding: 6px 12px;
+                font-family: inherit;
+                outline: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="agree">상기 내용은 본 웹사이트를 이용할때..</div>
+            <h4>위 내용에 동의하십니까?</h4>
+            <form id="frm" name="frm">
+                <div class="chkGrp">
+                    <input type="checkbox" id="agree" /><span>동의합니다</span>
+                    <button>선택완료</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function checkBoxValidate() {
+                if (!document.getElementById("agree").checked) {
+                    alert("동의하셔야 회원가입이 가능합니다");
+                    return false;
+                } else {
+                    alert("약관에 동의하셨습니다\n회원가입을 진행합니다.");
+                    location.href = "https://www.naver.com";
+                }
+            }
+            document.getElementById("frm").addEventListener("submit", (e) => {
+                e.preventDefault();
+                checkBoxValidate();
+            });
+        </script>
+    </body>
+</html>

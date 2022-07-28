@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+            body {
+                font-family: "Noto Sans KR", sans-serif;
+            }
+            .container {
+                padding: 20px;
+            }
+            h4 {
+                margin-bottom: 5px;
+            }
+            .rdoGrp {
+                display: flex;
+                align-items: center;
+                height: 50px;
+            }
+            input[type="button"] {
+                width: 25px;
+                height: 25px;
+            }
+            .rdoGrp span {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            button {
+                background-color: tomato;
+                border: 0px;
+                color: white;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 3px;
+                padding: 6px 12px;
+                font-family: inherit;
+                outline: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h4>성별을 선택하세요</h4>
+            <form id="frm" name="frm">
+                <div class-gdoGrp>
+                    <!-- name값이 동일해야한다 -->
+                    <input type="radio" name="gender" value="1" /><span>남자</span>
+                    <input type="radio" name="gender" value="2" /><span>여자</span>
+                    <button>선택완료</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            function radioValidate() {
+                let isChecked = ""; // true, false
+
+                for (let i = 0; i < document.getElementsByName("gender").length; i++) {
+                    if (document.frm.gender[i].checked) {
+                        isChecked = document.frm.gender[i].value;
+                    }
+                }
+                if (isChecked == "") {
+                    alert("성별을 선택하세요");
+                    return false;
+                } else {
+                    alert("성별이 선택되었습니다");
+                    return true;
+                }
+            }
+            document.getElementById("frm").addEventListener("submit", (e) => {
+                e.preventDefault();
+                radioValidate();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mouse over/out</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <style>
+            .wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .rect {
+                width: 300px;
+                height: 300px;
+                border-color: tomato;
+                background-color: tomato;
+                transition: 0.4s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h3>mouse over/out</h3>
+            <div class="wrap">
+                <div class="rect"></div>
+            </div>
+        </div>
+        <script>
+            let rect = document.querySelector(".rect");
+            rect.addEventListener("mouseover", () => {
+                rect.style.backgroundColor = "steelblue";
+                rect.style.borderRadius = "50%";
+            });
+            rect.addEventListener("mouseout", () => {
+                rect.style.backgroundColor = "";
+                rect.style.borderRadius = "";
+            });
+        </script>
+    </body>
+</html>

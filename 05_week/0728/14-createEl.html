@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>createElement</title>
+    </head>
+    <body>
+        <h2>createTextNode(html요소 내 글자를 만들어 낼 때)</h2>
+        <form>
+            <input type="text" autofocus id="subject" />
+            <button onClick="addList(); return false">목록추가</button>
+        </form>
+        <hr />
+        <ul id="itemList"></ul>
+
+        <script>
+            function addList() {
+                // 요소 노드 추가
+                let addItem = document.createElement("li");
+                let val = document.getElementById("subject").value;
+                let addText = document.createTextNode(val);
+                console.log(addText);
+
+                addItem.appendChild(addText);
+                document.getElementById("itemList").appendChild(addItem);
+                document.getElementById("subject").value = "";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+1. 변수타입 (int, double, char, String)
+double total = height + size;
+
+2. 계산문제
+	정수 + 실수 => 실수
+	정수/정수 => 정수
+	실수/정수 => 실수
+	10==9 => false
+	
+3. 비교연산
+	>, <, <=, >=, ==, &&, ||
+	
+4. 배열
+	int[] n = {1,2,3,4,5};
+	int[] n = {0}
+	int n[] = new int[]  // 변수선언은 배열임을 확인하면 됨
+	int n[3] = new int[3]; //  생성할때 몇개로 만들것인지 쓴다
+	
+	int a[] = new int[100]
+	마지막번호 => 99번
+	a.length => 100
+	
+	int[][] a = new int[행][열]
+	
+5. 반복문
+	for(int i = 0 ; i < 10 ; i++)
+	for(int i : 배열이름)
+	
+6. 클래스
+	자바에서는 객체를 생성하고 나면 가상머신이 관리함
+	=> 가비지 컬렉션이 객체가 생성이 되면 관리해서 필요없을때 삭제한다
+	=> 클래스는 인스턴스를 생성(new) 하기 위해 사용하는 틀이다
+	=> 클래스 소석의 변수 => 필드, 클래스는 필드+메서드로 이루어져있다.
+	
+7. 접근제어자
+	내부에서만 사용하는 필드의 경우, private
+	
+8. 생성자
+	생성자가 없으면 가상머신이 빈 생성자를 하나 만들어준다
+	이름: 클래스명()
+	this() <= 내 생성자 중에서 찾기
+	
+	Book[] b = new Book[10];
+	// Book을 담을수 있는 객체가 10개 생성된것이고,
+	// Book 이 10개가 만들어진것이 아님
+
+9. JSON
+	아래의 JSON 데이터를 사용하기 위한 라이브러리명을 기술하고 JSONObject를 이용하여 완성하여라
+	{"city" : {"seoul" : "맑음", "busan":"흐림"}}
+	키:값 이루어진 맵 형태의 타입
+	
+	//json.put("","");//object, object
+	JSONObject json = new JSONObject();
+	json.put("seoul","맑음");
+	json.put("busan","흐림");
+	JSONObject json2 = new JSONObject();
+	json2.put("city",json);
+
+10. Java Archive = xxx.jar => 압축풀면 xxx.class 파일이 들어있음

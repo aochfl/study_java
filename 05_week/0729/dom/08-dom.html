@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>select - change - e.currentTarget</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const sel = document.querySelector("select");
+                const p = document.querySelector("p");
+
+                sel.addEventListener("change", (e) => {
+                    const options = e.currentTarget.options;
+                    const idx = e.currentTarget.options.selectedIndex;
+
+                    p.textContent = `${options[idx].textContent}`;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <select>
+            <option value="">서울광역시</option>
+            <option value="">부산광역시</option>
+            <option value="">대구광역시</option>
+            <option value="">인천광역시</option>
+            <option value="">대전광역시</option>
+            <option value="">광주광역시</option>
+        </select>
+        <p>지역을 표시합니다</p>
+    </body>
+</html>

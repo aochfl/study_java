@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js -> json 데이터 변경</title>
+        <!-- 웹에서 데이터 전송 글자 -> json -->
+        <script>
+            // 객체 생성 : 배열 [], object(json {})
+            const obj = [
+                {
+                    // key(별명) value(값)
+                    userid: "idid",
+                    passwd: "1234",
+                    username: "부산",
+                    email: "idid@naver.com",
+                    age: 30,
+                },
+                {
+                    // key(별명) value(값)
+                    userid: "idid",
+                    passwd: "1234",
+                    username: "부산",
+                    email: "idid@naver.com",
+                    age: 30,
+                },
+                {
+                    // key(별명) value(값)
+                    userid: "idid",
+                    passwd: "1234",
+                    username: "부산",
+                    email: "idid@naver.com",
+                    age: 30,
+                },
+            ];
+
+            // json 변환 : JSON.stringify(객체이름);
+            // 역변환 : JSON.parse
+
+            console.log(obj);
+            console.log("변환");
+            const obj2 = JSON.stringify(obj, null, 4);
+            console.log(obj2);
+            console.log("역변환");
+            console.log(JSON.parse(obj2));
+        </script>
+    </head>
+    <body></body>
+</html>

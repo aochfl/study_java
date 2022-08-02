@@ -1,0 +1,5 @@
+event : click, submit
+
+addEventListener
+DomContentLoaded
+keyup

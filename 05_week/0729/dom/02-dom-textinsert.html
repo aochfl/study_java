@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DomContentLoaded</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // const headings = document.querySelector("h1");
+
+                // headings.textContent = "Busan";
+                // headings.style.color = "white";
+                // headings.style.backgroundColor = "tomato";
+                // headings.style.padding = "50px";
+
+                // Object 타입으로 저장
+                const headings = document.querySelectorAll("h1");
+                headings.forEach((heading, index) => {
+                    heading.textContent = "Busan IT";
+                    heading.style.color = "white";
+                    heading.style.backgroundColor = "tomato";
+                    heading.style.padding = "20px";
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1></h1>
+        <h1><h1></h1></h1>
+    </body>
+</html>

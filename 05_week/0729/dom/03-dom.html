@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>textConent vs innerHTML</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const tc = document.querySelector(".tc");
+                const ih = document.querySelector(".ih");
+
+                tc.textContent = "<h1>Busan</h1>";
+                ih.innerHTML = "<h1>Busan</h1>";
+            });
+        </script>
+    </head>
+    <body>
+        <div class="tc"></div>
+        <div class="ih"></div>
+    </body>
+</html>

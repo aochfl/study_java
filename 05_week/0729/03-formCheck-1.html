@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <input type="text" name="userid" id="userid" />
+    <!----------------------- type=button ------------------------------->
+    <button type="button" onClick="return validate();">회원가입</button>
+  </form>
+  <script>
+    function validate() {
+      if (document.getElementById("userid").value === "") {
+        alert("아이디를 입력하세요");
+        document.getElementById("userid").focus();
+        return false;
+      }
+      //--------------------location.href---------------------------
+      location.href = "https://nid.naver.com/nidlogin.login";
+    }
+  </script>
+</body>
+
+</html>

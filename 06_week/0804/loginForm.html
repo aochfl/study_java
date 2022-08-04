@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #d1d1d1;
+        }
+
+        .container {
+            /* -----------------width, height 값 몰라도 가운데 정렬 가능 */
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            /* -----------------width, height 값 몰라도 가운데 정렬 가능 */
+        }
+
+        .box {
+            background-color: white;
+            width:400px;
+            padding:20px 40px;
+        }
+
+        .input-form {
+            width:100%;
+            border:1px solid #aaa;
+            outline: 0;
+            padding:8px 5px;
+        }
+
+        .submit-btn {
+            width:100%;
+            padding:8px 5px;
+        }
+
+        .mb-15 {
+            margin-bottom:15px;
+        }
+
+        .userid_error, .passwd_error {
+            margin-top:3px;
+            width:100%;
+            font-size:16px;
+            color:#c62828;
+            background-color: rgba(255,0,0,0.1);
+            text-align: center;
+            padding:5px 8px;
+            border:1px solid #ef9a9a;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- 
+                1. form 내용을 전송 또는 예외처리하기 위한 자바스크립트는 밑에 있는 것처럼 이 방법으로만 사용하세요 
+                2. 다른 것들도 이해가 되면 좋지만 일단 이것 하나만이라도...
+            -->
+            <form method="post" onSubmit="return validate();" action="https://www.naver.com">
+                <div class="mb-15">
+                    <input type="text" id="userid" class="input-form">
+                    <div class="userid_error" id="userid_error">아이디를 입력하세요.</div>
+                </div>
+                <div class="mb-15">
+                    <input type="password" id="passwd" class="input-form">
+                    <div class="passwd_error" id="passwd_error">비밀번호를 입력하세요.</div>
+                </div>
+                <!-- 위에 onSubmit 전송방식이므로 input을 쓰던 button을 쓰던 type은 submit으로 하세요.-->
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const userid = document.getElementById("userid");
+        const passwd = document.getElementById("passwd");
+
+        const userid_error = document.getElementById("userid_error");
+        const passwd_error = document.getElementById("passwd_error");
+
+        function validate() {
+            if(userid.value === '') {
+                userid.style.border = "1px solid #f00";
+                userid_error.style.display = "block";
+                userid.focus();
+                return false; /* if문은 실패했을 때 예외처리하는 구문이므로 return false*/
+
+            }else if(userid.value.length < 8) {
+                userid.style.border = "1px solid #f00";
+                userid_error.style.display = "block";
+                userid_error.innerHTML = "아이디는 8자리 이상입니다.";
+                userid.focus();
+                return false; /* else if문은 실패했을 때 예외처리하는 구문이므로 return false*/
+            } else{
+                userid_error.style.display = "none";
+                /* else 문은 성공했을 때 예외처리이므로 return은 빼도 됩니다.*/
+            }
+
+            if(passwd.value === '') {
+                passwd.style.border = "1px solid #f00";
+                passwd_error.style.display = "block";
+                passwd.focus();
+                return false;
+
+            }else if(passwd.value.length < 8) {
+                passwd.style.border = "1px solid #f00";
+                passwd.style.display = "block";
+                passwd_error.innerHTML = "비밀번호는 8자리 이상입니다.";
+                passwd.focus();
+                return false;
+            } else{
+                passwd_error.style.display = "none";
+                /* else 문은 성공했을 때 예외처리이므로 return은 빼도 됩니다.*/
+            }
+
+            alert("form action에서 설정한 주소로 이동합니다.");
+            return true; /* 위에서 설정한 모든 예외처리에 문제가 없이 진행되었다면 return true(생략 가능)*/
+        }
+    </script>
+</body>
+</html>

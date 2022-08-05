@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                    배열명.push(객체) : 제일 마지막에 데이터를 삽입함
+                     - 객체를 선언하고 데이터는 push 별도 입력
+                */
+            const users = [];
+            users.push({ userid: "busan", passwd: "1234" });
+            users.push({ userid: "busan2", passwd: "1235123" });
+            users.push({ userid: "busan3", passwd: "asdf" });
+
+            console.log(JSON.stringify(users));
+        </script>
+    </body>
+</html>

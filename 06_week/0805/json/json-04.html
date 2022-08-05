@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                회원가입 객체 생성 : 여러명 -> user_insert 
+                  - 세부정보 : html 작없할 때 없어도 id 설정(primary key)
+                                - 중복되면 x, 숫자 형태
+                    - user(S) - 사용자 아이디
+                    - passwd(S) - 사용자 비밀번호
+                    - username(S) - 사용자 이름
+            */
+
+            // const user_insert = {
+            //     id: 1,
+            //     userid: "id123",
+            //     passwd: "12345",
+            //     username: "홍길동",
+            // };
+            // console.log(user_insert.userid);
+
+            // if (user_insert.userid === "id123" && user_insert.passwd === "12345") {
+            //     console.log("로그인되었습니다");
+            // } else {
+            //     console.log("아이디와 비밀번호를 확인해주세요");
+            // }
+
+            const user_insert = [
+                {
+                    id: 1,
+                    userid: "busan",
+                    passwd: "1234",
+                },
+                {
+                    id: 2,
+                    userid: "daegu",
+                    passwd: "12345",
+                },
+                {
+                    id: 3,
+                    userid: "seoul",
+                    passwd: "asdfg",
+                },
+            ];
+
+            console.log(user_insert[0].userid);
+            console.log(user_insert[1].userid);
+
+            /* 
+                데이터 전체 출력 : loop 
+                - for(초기값, 조건, 증감값)
+                - 배열이름.forEach((별명)=>{});
+            */
+
+            // for (let i = 0; i < user_insert.length; i++) {
+            //     console.log(user_insert[i]);
+            // }
+
+            // user_insert.forEach((user) => {
+            //     console.log(user);
+            // });
+
+            const { id, passwd } = user_insert[2];
+            console.log(`${id} - ${passwd}`);
+
+            console.log(JSON.stringify(user_insert, null, 2));
+        </script>
+    </body>
+</html>

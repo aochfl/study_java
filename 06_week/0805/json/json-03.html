@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                 1. 여러명의 사용자를 js 객체로 등록하기
+                 2. 객체생성 : 변수명 - users_create
+                     - 세부정보 : email(S), passwd(S), gender(S)
+                 3. stringify(), parse()
+                 4. print : console.log()
+             */
+            const users_create = [
+                {
+                    email: "asdf@asd.asd",
+                    passwd: "1234qwer",
+                    gender: "Female",
+                },
+                {
+                    email: "zxcv@zxcasd.zxc",
+                    passwd: "1234",
+                    gender: "Female",
+                },
+                {
+                    email: "zzzzzzz@azxc.ccc",
+                    passwd: "qwer",
+                    gender: "Man",
+                },
+            ];
+
+            const obj = JSON.stringify(users_create, null, 2);
+            console.log(obj);
+
+            console.log(JSON.parse(obj));
+        </script>
+    </body>
+</html>

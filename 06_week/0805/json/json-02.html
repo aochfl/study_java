@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>text</p>
+        <script>
+            /*
+              1. 상품등록 : Javascript Object -> Json Object로 변환해서 전송
+              2. 객체생성 : Items_Create
+              3. 세부정보 : item_Name(5), itemp_Price(n), item_Count(n)
+              4. client => server : JSON.stringify()
+              5. client <= server : JSON.parse()
+              6. print : console.log();
+            */
+            const Item_Create = {
+                item_Name: "Shop Clothes",
+                item_Price: 10000,
+                item_Count: 1000,
+            };
+
+            /* 서버로 js -> json 변환 후 전송 */
+            const result = JSON.stringify(Item_Create, null, 2);
+            console.log(result);
+
+            const result2 = JSON.parse(result);
+            console.log(result2);
+        </script>
+    </body>
+</html>

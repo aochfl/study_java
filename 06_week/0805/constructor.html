@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 클래스 작성 규칙
+            // 1. 클래스 작성(파일과 동일)
+            // 2. 생성자
+            // 3. method() - 동작
+            // 4. 출력
+            class Sum {
+                constructor(num1, num2) {
+                    // num1, num2 객체 초기화
+                    this.num1 = num1;
+                    this.num2 = num2;
+                }
+                getAdd() {
+                    return this.num1 + this.num2;
+                }
+                getMul(num1, num2) {
+                    return this.num1 * this.num2;
+                }
+            }
+            const result = new Sum(10, 20).getMul();
+            console.log(result);
+        </script>
+    </body>
+</html>

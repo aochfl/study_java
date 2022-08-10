@@ -21,7 +21,10 @@
 DDL : CREATE, ALTER, DROP
 
 DML : SELECT, INSERT, UPDATE, DELETE
-
+자료검색 SELECT * FROM 테이블명;
+자료입력 INSERT INTO 테이블명 VALUES();
+자료삭제 DELETE FROM 테이블명 WHERE ~
+자료수정 UPDATE 테이블명 SET 바꿀컬럼 = 바꿀값 WHERE ~
 
 -------------------------
 0. 관리자 계정으로 접속
@@ -65,7 +68,8 @@ CREATE user busanit@'%' identified by '1234';
     SELECT height, name FROM usertbl ORDER BY height DESC limit 5;
 15. 유사어 검색 출력
     select * from users where userid like '%s%';
-
+16. 데이터 수정
+    UPDATE 테이블명 set 컬럼=바꿀값, 컬럼2=바꿀값 WHERE id=?;
 
 
 
@@ -81,3 +85,4 @@ gender char(1),
 userDate date
 );
 insert into users values(NULL,'busanit','bs','1111','busanit@busan.it','2022-08-10','010-1234-5678','M',now());
+UPDATE users SET passwd='', email='', userDate=now() where num=3;

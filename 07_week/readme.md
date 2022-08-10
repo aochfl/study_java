@@ -7,3 +7,7 @@
 # 08.09
 
 1. Swing을 이용한 GUI 프로그래밍
+
+# 08.10
+
+1. MySQL 설치 (https://dev.mysql.com/downloads/mysql/)

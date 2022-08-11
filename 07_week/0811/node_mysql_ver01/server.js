@@ -21,6 +21,7 @@ const dbconnect = mysql.createConnection({
     user: "busanit",
     password: "1234",
     database: "busanit",
+    dateStrings: "date",
 });
 dbconnect.connect((err) => {
     if (!err) {
@@ -57,8 +58,37 @@ app.get("/", (req, res) => {
 app.get("/register", (req, res) => {
     res.render("register", { title: "Home > Register" }); //파일 이름 적어주면 됨 - 확장자x
 });
+app.post("/register", (req, res) => {
+    // console.log(req.body); // json 형태로 들어옴
+    // console.log(req.body.userid);
+    // console.log(req.body.passwd);
+    // console.log(req.body.username);
+
+    // const { userid, passwd, username } = req.body;
+
+    const sql = "INSERT INTO tb_users values(null,?,?,?,now());";
+    // db접속 -> insert 실행하기 위한 코드
+    dbconnect.query(sql, [req.body.userid, req.body.passwd, req.body.username], (err) => {
+        if (!err) {
+            console.log("회원가입이 완료되었습니다");
+            res.redirect("/list");
+        } else {
+            console.log("회원가입이 실패하였습니다\n" + err);
+            res.redirect("/register");
+        }
+    });
+});
 app.get("/list", (req, res) => {
-    res.render("list", { title: "Home > List" });
+    // res.render("list", { title: "Home > List" });
+    const sql = "SELECT * FROM tb_users ORDER BY num DESC;";
+    dbconnect.query(sql, (err, results) => {
+        if (!err) {
+            res.render("list", { title: "Home > List", users: results });
+            // console.log(results);
+        } else {
+            console.log("사용자 정보를 불러오는데 실패했습니다\n" + err);
+        }
+    });
 });
 /* 6. end --------------------------------------------------------------- */
 

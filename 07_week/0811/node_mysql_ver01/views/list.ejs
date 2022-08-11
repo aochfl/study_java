@@ -5,6 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><%=title%></title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
         <h2>회원목록보기</h2>
@@ -19,14 +26,23 @@
                 <td>가입일</td>
                 <td>수정/삭제</td>
             </tr>
+            <% if(users == ''){ %>
             <tr>
-                <td>1</td>
-                <td>busanit</td>
-                <td>12345</td>
-                <td>부산</td>
-                <td>2022-08-11</td>
-                <td></td>
+                <td colspan="6">등록된 사용자가 없습니다.</td>
             </tr>
+            <% } else { users.forEach((user)=>{ %>
+            <tr>
+                <td><%= user.num %></td>
+                <td><%= user.userid %></td>
+                <td><%= user.passwd %></td>
+                <td><%= user.username %></td>
+                <td><%= user.regdate %></td>
+                <td style="text-align: center">
+                    <i class="fa-solid fa-pen-to-square"> </i>
+                    <i class="fa-solid fa-trash-can"></i>
+                </td>
+            </tr>
+            <% }) } %>
         </table>
     </body>
 </html>

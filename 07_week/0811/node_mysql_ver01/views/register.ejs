@@ -10,10 +10,10 @@
         <h2>회원가입 폼 작성</h2>
         <a href="/">메인으로</a>
         <a href="/list">회원목록</a>
-        <form method="post">
-            Userid : <input type="text" name="userid" required /> Passwd :
-            <input type="password" name="passwd" required /> Username :
-            <input type="text" name="username" required />
+        <form method="post" action="/register">
+            <div>Userid :<input type="text" name="userid" required /></div>
+            <div>Passwd :<input type="password" name="passwd" required /></div>
+            <div>Username :<input type="text" name="username" required /></div>
             <input type="submit" value="회원가입" />
         </form>
     </body>

@@ -1,7 +1,7 @@
 CREATE TABLE tb_users(
     num int(8) not null primary key auto_increment,
     userid varchar(20) not null,
-    passwd varchar(10) not null,
+    passwd varchar(20) not null,
     username varchar(10) not null,
     regdate date
 );

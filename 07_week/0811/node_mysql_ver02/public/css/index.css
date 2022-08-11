@@ -1,0 +1,151 @@
+body {
+    width: 1080px;
+    margin: 5px auto;
+}
+/* header */
+header {
+    background-color: red;
+}
+nav {
+    background-color: gray;
+    display: flex;
+    justify-content: end;
+}
+nav a {
+    padding-left: 10px;
+}
+.logo-wrapper {
+    display: flex;
+}
+.logo-wrapper > div {
+    padding: 10px;
+    margin-right: 10px;
+}
+.search {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    height: 24px;
+    padding: 5px;
+}
+/* board menu */
+.board-list-wrap {
+    display: flex;
+    background-color: aqua;
+}
+.board-list-wrap > div {
+    margin: 5px 10px;
+
+    position: relative;
+
+    height: 24px;
+    line-height: 24px;
+}
+.board-list-wrap > div > div {
+    position: absolute;
+    top: 24px;
+    display: block;
+    background-color: aquamarine;
+}
+.category-total-list-wrap button {
+    font-size: 16px;
+}
+#category-total-list {
+    display: flex;
+
+    background-color: darkkhaki;
+    z-index: 9999;
+}
+#category-total-list > ul {
+    margin-right: 15px;
+}
+#category-total-list > ul > li {
+    width: 100px;
+    background-color: darkturquoise;
+}
+.category-item {
+    background-color: blueviolet;
+}
+/* board menu finish */
+/* header finish*/
+
+/* main */
+main {
+    display: flex;
+    padding: 5px;
+    background-color: yellow;
+}
+.main-left-wrap,
+.main-right-wrap {
+    padding: 5px;
+}
+.main-left-wrap div,
+.main-right-wrap div {
+    margin-bottom: 10px;
+}
+.main-left-wrap {
+    width: 75%;
+    margin: 5px;
+    background-color: green;
+}
+.main-top-ad-wrap {
+    width: 100%;
+    height: 90px;
+    background-color: cadetblue;
+}
+
+.main-right-wrap {
+    width: 25%;
+    margin: 5px;
+    background-color: skyblue;
+}
+.login-wrap {
+    display: grid;
+    grid-template-columns: auto 75px;
+}
+.login-wrap .id,
+.login-wrap .pw {
+    grid-column: 1/2;
+    border: 1px solid black;
+    height: 28px;
+    padding: 5px;
+}
+.login-wrap button {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    border: 1px solid black;
+}
+.notice-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+.notice-wrap > span {
+    margin: 5px;
+    /* margin-right: 5px; */
+}
+.notice-wrap ul li {
+    /* list-style: disc; */
+    /* list-style-position: inside; */
+}
+
+/* section */
+section {
+    background-color: blue;
+}
+/* section finish */
+/* main finish */
+
+/* footer */
+footer {
+    width: 100%;
+    background-color: purple;
+}
+/* footer finish */
+
+/* script */
+.show {
+    display: block;
+}
+.hide {
+    display: none !important;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%=title%></title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/login.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="login-wrap">
+            <h1 class="en">Login</h1>
+            <form
+                method="post"
+                name="loginForm"
+                id="loginForm"
+                onSubmit="return validateLogin();"
+                action="./index"
+            >
+                <div class="id-wrap">
+                    <input type="text" placeholder="ID" id="id" autocomplete="off" maxlength="16" />
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <div class="pw-wrap">
+                    <input type="password" placeholder="PW" id="pw" autocomplete="off" maxlength="25" />
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <div class="btn-wrap">
+                    <button type="submit" onClick="return validateLogin();"><p class="kr">로그인</p></button>
+                </div>
+            </form>
+            <div class="link-wrap">
+                <a href="./register">회원가입</a>
+                <a href="./memberList"><p style="color: rgba(0, 0, 0, 0.3)">회원정보</p></a>
+            </div>
+        </div>
+        <script src="./js/login.js"></script>
+    </body>
+</html>

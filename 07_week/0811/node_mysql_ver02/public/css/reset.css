@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+/* reset 동작 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+input,
+button,
+select {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+button,
+a {
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+/* reset 동작 끝 */
+body {
+    background-color: #d1d1d1;
+}
+
+.kr {
+    font-family: "Nanum Gothic", sans-serif;
+}
+.en {
+    font-family: "Open Sans", sans-serif;
+}

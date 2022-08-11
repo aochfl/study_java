@@ -11,3 +11,7 @@
 # 08.10
 
 1. MySQL 설치 (https://dev.mysql.com/downloads/mysql/)
+
+# 08.11
+
+1. html + mysql + nodejs

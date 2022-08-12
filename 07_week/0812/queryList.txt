@@ -1,0 +1,26 @@
+사용했던 쿼리 리스트
+
+SELECT * FROM tb_users ORDER BY num DESC ;
+desc tb_users;
+select count(num) as 전체회원수 from tb_users;
+select max(num) from tb_users;
+select min(num) from tb_users;
+select sum(num) from tb_users;
+select avg(num) from tb_users;
+INSERT into tb_users values(null, 'idid','pwpw','name',now());
+UPDATE tb_users set userid='idididid' where num=9;
+DELETE FROM tb_users WHERE num=8;
+
+
+CREATE TABLE products(
+pid int NOT NULL PRIMARY KEY auto_increment, 
+productCode varchar(10) not null,
+productName varchar(255) not null,
+amount int not null default 0,
+price int not null default 0,
+delivery char(1) default 'N',
+productDate DATE
+);
+desc products;
+SELECT * from products;
+INSERT INTO products values(null,'B103030','청호 나이스 정수기 최저가 렌탈 모음전', 10000,48900,'Y',now());

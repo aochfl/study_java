@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home > 회원목록보기</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    .top-container {
+      background-color: #000;
+      padding:0 30px;
+    }
+
+    .top-container h2 a {
+      color:#fff;
+    }
+
+    .top-container, nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      height:80px;
+    }
+
+    nav ul li {
+      margin-left: 50px;
+	  font-size:20px;
+    }
+
+    nav ul a {
+      color:#fff;
+    }
+
+    .container {
+      padding:30px 20px;
+    }
+
+    .container h4 {
+      color:#333;
+    }
+
+    .container span {
+      font-size: 15px;
+    }
+
+    .tbl-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      padding:0 5px;
+    }
+
+    table {
+      width:100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    tr {
+      height:60px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    tr:nth-child(even):hover {
+      background-color:#f7f7f7;
+    }
+
+    tr:first-child {
+      background-color: #2962FF;
+      color:#fff;
+    }
+
+    tr:not(:first-child) {
+      text-align: center;
+    }
+
+    th:nth-child(1) {
+      width:5%;
+    }
+
+    th:nth-child(2) {
+      width:10%;
+    }
+
+    th:nth-child(3) {
+      width:10%;
+    }
+
+    th:nth-child(4) {
+      width:10%;
+    }
+
+    th:nth-child(6) {
+      width:15%;
+    }
+
+    th:nth-child(7) {
+      width:5%;
+    }
+
+    th:nth-child(8) {
+      width:15%;
+    }
+
+    th:nth-child(9) {
+      width:10%;
+    }
+
+    td:nth-child(2), td:nth-child(3) {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .btn {
+      background-color: #e7e7e7;
+      color:#000;
+      padding:11px 12px;
+      font-weight: bold;
+      border: 1px solid #c7c7c7;
+      font-size: 13px;
+    }
+
+    .btn:hover {
+      background-color: #eee;
+    }
+
+    .tbl-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:0 5px;
+      margin-top:10px;
+    }
+
+    .pagination a {
+      background-color: #e7e7e7;
+      color:#000;
+      padding:12px 17px;
+      border: 1px solid #c7c7c7;
+      font-size: 15px;
+    }
+
+    .pagination a:first-child, .pagination a:last-child {
+      padding:12px 15px;
+    }
+
+    .pagination a.active {
+      font-weight: bold;
+	  background-color:#000;
+	  color:#fff;
+    }
+
+    select {
+      padding:12px 10px;
+      outline: none;
+      background-color: #f7f7f7;
+      border:1px solid #c7c7c7;
+      width:100px;
+      font-family: inherit;
+	  vertical-align:bottom;
+    }
+
+    .search-box input {
+      padding:12px 10px;
+      outline: none;
+      background-color: #f7f7f7;
+      border-top:1px solid #bbb;
+      border-left:1px solid #bbb;
+      border-right:1px solid #e7e7e7;
+      border-bottom:1px solid #e7e7e7;
+      width:200px;
+    }
+
+    .search-box button.btn {
+      background-color: #d50000;
+      border:0;
+      color:#fff;
+      font-weight: normal;
+      padding:12px 12px;
+      font-weight: 14px;
+      cursor: pointer;
+	  vertical-align: bottom;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-container">
+    <h2><a href="">Busanit Academy</a></h2>
+    <nav>
+      <ul>
+        <li><a href="#">홈으로</a></li>
+        <li><a href="#">회원목록</a></li>
+        <li><a href="#">게시판관리</a></li>
+        <li><a href="#">환경설정</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="tbl-top">
+      <h4><i class="fa-solid fa-user-tag"></i> Home > 회원목록</h4>
+      <span>전체회원수 : <strong><u>10</u>명</strong></span>
+    </div>
+    <form name="frm" method="post" action="#">
+    <table>
+      <tr>
+        <th>번호</th>
+        <th>회원이름</th>
+        <th>아이디</th>
+        <th>비밀번호</th>
+        <th>이메일</th>
+        <th>전화번호</th>
+        <th>성별</th>
+        <th>가입일</th>
+        <th>비고</th>
+      </tr>
+      
+      <tr>
+        <td>5</td>
+        <td>부산아이디</td>
+        <td>busanit</td>
+        <td>********</td>
+        <td>email@email.com</td>
+        <td>010.1234.5678</td>
+        <td>여자</td>
+        <td>2022.08.12</td>
+        <td>
+          <a href="" class="btn"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
+          <a href="" class="btn"><i class="fa-solid fa-trash-can"></i> 삭제</a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>부산아이디</td>
+        <td>busanit</td>
+        <td>********</td>
+        <td>email@email.com</td>
+        <td>010.1234.5678</td>
+        <td>남자</td>
+        <td>2022.08.12</td>
+        <td>
+          <a href="" class="btn"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
+          <a href="" class="btn"><i class="fa-solid fa-trash-can"></i> 삭제</a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>부산아이디</td>
+        <td>busanit</td>
+        <td>********</td>
+        <td>email@email.com</td>
+        <td>010.1234.5678</td>
+        <td>여자</td>
+        <td>2022.08.12</td>
+        <td>
+          <a href="" class="btn"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
+          <a href="" class="btn"><i class="fa-solid fa-trash-can"></i> 삭제</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>부산아이디</td>
+        <td>busanit</td>
+        <td>********</td>
+        <td>email@email.com</td>
+        <td>010.1234.5678</td>
+        <td>남자</td>
+        <td>2022.08.12</td>
+        <td>
+          <a href="" class="btn"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
+          <a href="" class="btn"><i class="fa-solid fa-trash-can"></i> 삭제</a>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>부산아이디</td>
+        <td>busanit</td>
+        <td>********</td>
+        <td>email@email.com</td>
+        <td>010.1234.5678</td>
+        <td>여자</td>
+        <td>2022.08.12</td>
+        <td>
+          <a href="" class="btn"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
+          <a href="" class="btn"><i class="fa-solid fa-trash-can"></i> 삭제</a>
+        </td>
+      </tr>
+    </table>
+    <div class="tbl-bottom">
+      <div class="pagination">
+        <a href="#" class="left-arrow"><i class="fa-solid fa-angles-left"></i></a>
+        <a href="#" class="left-arrow"><i class="fa-solid fa-angle-left"></i></a>
+        <a href="#" class="page active">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page">3</a>
+        <a href="#" class="page">4</a>
+        <a href="#" class="page">5</a>
+        <a href="#" class="left-arrow"><i class="fa-solid fa-angle-right"></i></a>
+        <a href="#" class="left-arrow"><i class="fa-solid fa-angles-right"></i></a>
+      </div>
+      <div class="search-box">
+        <select name="sel">
+          <option value="username">회원이름</option>
+          <option value="userid">아이디</option>
+          <option value="email">이메일</option>
+        </select>
+        <input type="search" class="search" required /> 
+        <button class="btn"><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

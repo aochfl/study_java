@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home > 회원목록보기</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            /* reset 동작 */
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            ul li {
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+            }
+            input,
+            button,
+            select {
+                border: 0;
+                /* 커서가 활성화되었을때 테두리강조효과 */
+                outline: 0;
+                background-color: transparent;
+            }
+            table {
+                /* 표 서식에 2줄로 나오는것을 1줄로 변경 */
+                border-collapse: collapse;
+                width: 100%;
+            }
+            /* reset 동작 끝 */
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                height: 50px;
+                background-color: black;
+                color: white;
+            }
+            header a {
+                color: white;
+                margin-left: 20px;
+            }
+            main {
+                padding: 20px;
+                font-size: 12px;
+            }
+            .list-header,
+            .list-footer {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px;
+            }
+            table tr {
+                height: 40px;
+                text-align: center;
+                border-bottom: 1px solid #c1c1c1;
+                table-layout: fixed;
+                word-break: break-all;
+            }
+            table tr:first-child {
+                background-color: #2962ff;
+                color: white;
+            }
+            table td:first-child {
+                width: 30px;
+            }
+            table td:last-child {
+                width: 100px;
+            }
+            table td:last-child i {
+                background-color: #e1e1e1;
+                border: 1px solid #c1c1c1;
+                padding: 3px;
+                margin: 2px;
+                cursor: pointer;
+            }
+            .list-footer-left a {
+                background-color: #e1e1e1;
+                border: 1px solid #c1c1c1;
+                padding: 5px;
+            }
+            .list-footer-right select,
+            .list-footer-right input {
+                background-color: white;
+                border: 1px solid #c1c1c1;
+                padding: 5px;
+                align-items: center;
+            }
+            .list-footer-right button {
+                background-color: tomato;
+                color: white;
+                padding: 5px;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+
+            .list-selected {
+                background-color: #515151 !important;
+                color: white !important;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="title">Busanit Academy</div>
+            <div class="nav">
+                <a href="#">홈으로</a>
+                <a href="#">회원목록</a>
+                <a href="#">게시판관리</a>
+                <a href="#">환경설정</a>
+            </div>
+        </header>
+        <main>
+            <div class="list-wrap">
+                <div class="list-header">
+                    <div class="list-header-left"><i class="fa-solid fa-user"></i> Home > 회원목록</div>
+                    <div class="list-header-right">전체회원수: ?</div>
+                </div>
+                <div class="list">
+                    <table>
+                        <tr>
+                            <th>번호</th>
+                            <th>회원이름</th>
+                            <th>아이디</th>
+                            <th>비밀번호</th>
+                            <th>이메일</th>
+                            <th>전화번호</th>
+                            <th>성별</th>
+                            <th>가입일</th>
+                            <th>비고</th>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>부산아이티</td>
+                            <td>busanit</td>
+                            <td>******</td>
+                            <td>email@busanit.com</td>
+                            <td>010-1234-1234</td>
+                            <td>남자</td>
+                            <td>2022.08.12</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square">수정</i>
+                                <i class="fa-solid fa-trash-can">삭제</i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>부산아이티</td>
+                            <td>busanit</td>
+                            <td>******</td>
+                            <td>email@busanit.com</td>
+                            <td>010-1234-1234</td>
+                            <td>남자</td>
+                            <td>2022.08.12</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square">수정</i>
+                                <i class="fa-solid fa-trash-can">삭제</i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>부산아이티</td>
+                            <td>busanit</td>
+                            <td>******</td>
+                            <td>email@busanit.com</td>
+                            <td>010-1234-1234</td>
+                            <td>남자</td>
+                            <td>2022.08.12</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square">수정</i>
+                                <i class="fa-solid fa-trash-can">삭제</i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>부산아이티</td>
+                            <td>busanit</td>
+                            <td>******</td>
+                            <td>email@busanit.com</td>
+                            <td>010-1234-1234</td>
+                            <td>남자</td>
+                            <td>2022.08.12</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square">수정</i>
+                                <i class="fa-solid fa-trash-can">삭제</i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>부산아이티</td>
+                            <td>busanit</td>
+                            <td>******</td>
+                            <td>email@busanit.com</td>
+                            <td>010-1234-1234</td>
+                            <td>남자</td>
+                            <td>2022.08.12</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square">수정</i>
+                                <i class="fa-solid fa-trash-can">삭제</i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="list-footer">
+                    <div class="list-footer-left">
+                        <a href="#"><i class="fa-solid fa-angles-left"></i></a>
+                        <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+                        <a href="#" class="list-selected">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                        <a href="#"><i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                    <div class="list-footer-right">
+                        <select name="" id="">
+                            <option value="">회원이름</option>
+                            <option value="">아이디</option>
+                            <option value="">이메일</option>
+                        </select>
+                        <input type="text" />
+                        <button>검색</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

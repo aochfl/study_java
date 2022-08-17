@@ -50,3 +50,55 @@ drop table login;
 SELECT COUNT(bcName) as 'total' FROM big_category;
 SELECT bcName FROM big_category;
 SELECT B.bcName as '제조사' FROM big_category as B;
+
+
+/* DB 처음생성시 */
+DROP TABLE IF EXISTS big_category;
+CREATE TABLE big_category(
+    bcCode varchar(5) not null,
+    bcName varchar(20) not null
+);
+INSERT INTO big_category VALUES('100','현대차');
+INSERT INTO big_category VALUES('200','기아차');
+INSERT INTO big_category VALUES('300','쌍용차');
+
+show tables;
+
+SELECT * FROM big_category;
+
+primary key  : 값을 구별해주는 유일한 key ;
+- not null, 중복되는 값이 x
+
+foreign key : 다른 테이블과 연결해서 사용할때 쓰는 키
+- 연결 할 테이블의 primary key를 일반적으로 사용하면 됨
+- 당연히 연결해서 사용할 테이블과 구조가 동일해야 함
+
+join 테이블 여러개를 연결해서 사용할 때
+
+
+
+회원테이블 : userTBL
+- userid 글자 not null,
+- mobile1 통신사 3 char(3),
+- height 키 : smallint,
+- mDate date 날짜
+상품테이블 : buyTBL
+- pid 상품에서 상품을 유일하게 구분해주는 primary
+  숫자타입이고 자동으로 코드를 부여
+  원래는 없어도 되지만 userTBL 과 연결해서 사용하기 위해서는 필요한 외래키
+- 상품이름
+- 가격 숫자
+
+CREATE TABLE userTBL(
+    userid varchar(20) not null primary key,
+    mobile1 char(3),
+    height smallint,
+    mDate date
+);
+CREATE TABLE buyTBL(
+    num int(8) not null primary key auto_increment,
+    userid varchar(20) not null,
+    productName varchar(255) not null,
+    productPrice int not null default 0,
+    foreign key(userid) references userTBL(userid)
+);

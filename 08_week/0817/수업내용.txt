@@ -102,3 +102,54 @@ CREATE TABLE buyTBL(
     productPrice int not null default 0,
     foreign key(userid) references userTBL(userid)
 );
+
+INSERT INTO userTBL VALUES(
+    'busanit','011',190,now()
+);
+INSERT INTO userTBL VALUES(
+    'seoulit','010',185,now()
+);
+INSERT INTO userTBL VALUES(
+    'busanit','019',135,now()
+);
+
+INSERT INTO buyTBL VALUES(
+    NULL, 'busanit', '옥션',10000
+);
+INSERT INTO buyTBL VALUES(
+    NULL, 'seoulit', '지마켓',50000
+);
+INSERT INTO buyTBL VALUES(
+    NULL, 'busanit', '티몬',1000
+);
+
+SELECT U.userid, B.productName, B.productPrice FROM userTBL as U, buyTBL as B WHERE U.userid=B.userid;
+
+
+/* employees - sqlDB1.sql */
+태어난 해가 1970이상 이고 키가 182이상인 사람의 아이디와 이름을 출력
+SELECT userid, name FROM userTBL where birthYear>=1970 and height>=182;
+키아 170이상이고 180 이하인 사람의 아이디와 이름을 출력
+SELECT userid, name FROM userTBL where height>=170 and height<=180;
+SELECT userid, name FROM userTBL where height IN(170,180);
+
+성이 김씨인 사람의 이름과 키를 검색하시오 : name like '김%';
+SELECT * FROM userTBL WHERE name like '김%';
+
+지역이 경남, 전남, 경북인 사람의 이름과 주소를 출력하시오
+SELECT * FROM userTBL WHERE addr IN("경남","전남","경북");
+
+김경호 키보다 초과한 사람의 이름과 키를 출력하시오
+SELECT * FROM userTBL where height > (SELECT height FROM userTBL WHERE name="김경호");
+
+
+DISTINCT 중복 데이터 제거
+SELECT COUNT(*) FROM userTBL WHERE addr='서울';
+SELECT DISTINCT(addr) FROM userTBL ORDER by addr asc;
+
+userTBL에서 중복되는 데이터를 하나만 표시하고 addr을 기준으로
+내림차순 정렬하고 한페이지에 2개만 표시하시오
+SELECT DISTINCT addr FROM userTBL ORDER BY addr desc limit 2;
+
+buytbl 기본키를 기준으로 내림차순으로 정렬하고 한페이지에 10개만 표시하시오
+SELECT * FROM buyTBL ORDER BY num DESC limit 10;

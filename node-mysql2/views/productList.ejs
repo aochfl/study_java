@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h4><a href="/">관리자페이지로 이동</a> <a href="/main">메인페이지로 이동</a> <a href="/productAdd">상품등록하기</a></h4>
+  <table border="1" width="100%">
+    <tr height="40px">
+      <th>상품번호</th>
+      <th>상품코드</th>
+      <th>상품명</th>
+      <th>상품수량</th>
+      <th>상품가격</th>
+      <th>상품등록일</th>
+    </tr>
+    <% if( productList == '' ) { %>
+    <tr style="height:40px;text-align:center;"><td colspan="6"><strong>등록된 상품이 없습니다.</strong></td></tr>
+    <%
+      }else{      
+        productList.forEach((p, k) => {
+    %>
+    <tr style="height:40px;text-align:center;">
+      <td><%= k+1 %></td>
+      <td><%= p.productCode %></td>
+      <td><%= p.productName %></td>
+      <td><%= p.productAmount %></td>
+      <td><%= p.productPrice %></td>
+      <td><%= p.productReg %></td>
+    </tr>
+    <% 
+       });
+      }
+    %>
+  </table>
+</body>
+</html>

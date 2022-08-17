@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <form name="frm" method="post" autocomplete="off">
+    <select name="big" id="big" onChange="showSmallCategory(this.value);" style="width:200px;height:35px;">
+    </select>
+
+    <select name="small" id="small" style="width:200px;height:35px;">
+      <option>선택하세요</option>
+    </select><br />
+    <div style="margin:10px 0;">
+      제품명 : <input type="text" name="productName" id="productName" required  style="width:300px;height:30px;" />
+    </div>
+    <div style="margin:10px 0;">
+      제품수량 : <input type="text" name="productAmount" id="productAmount" required  style="width:300px;height:30px;" />
+    </div>
+    <div style="margin:10px 0;">
+      제품가격 : <input type="text" name="productPrice" id="productPrice" required  style="width:300px;height:30px;" />
+    </div>
+    <input type="submit" value="상품등록" />
+  </form>
+
+
+  <script>
+    window.onload = function() {
+      $.ajax({
+          url: "/ajaxBig",
+          method: "POST",
+          contentType: "application/json",
+          success: function(data) {
+            $('#big').html(`${data.opt}`);
+          }
+        });
+    }
+
+    function showSmallCategory(bigCode) {
+      $.ajax({
+          url: "/ajaxSmall",
+          method: "POST",
+          contentType: "application/json",
+          data: JSON.stringify({bigCateCode: bigCode}),
+          success: function(data) {
+            $('#small').html(`${data.opt}`);
+          }
+        });
+    }
+  </script>
+</body>
+</html>

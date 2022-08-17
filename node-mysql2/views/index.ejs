@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <% if(tblExists === 0) { %>
+  <h4>쇼핑몰 운영에 관련된 Mysql Database의 Table이 존재하지 않습니다.</h4>
+  <h4>아래 버튼을 클릭하면 필요한 데이터를 자동으로 생성합니다</h4>
+  <a href="/dbCreate">Database > Table > 생성하기</a>
+
+  <% } else { %>
+    <a href="/dbDrop">Database > Table > 삭제하기
+    <p></p>
+    <a href="/main">메인페이지로 이동</a>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,79 @@
+* 프로젝트 : 일반 계정 생성 작업 : Mysql 8.0
+
+- root 접속
+
+1. 계정생성 : CREATE
+ - id, password
+ - localhost(내 컴퓨터에서만 접속), %(외부접속)
+ex) CREATE user 아이디@'%' identified by '비밀번호';
+
+2. 권한 - GRANT
+ex) GRANT ALL on *.* TO 아이디@'%' WITH GRANT OPTION;
+
+3. 설정 적용 : flush privileges;
+
+* mysql -u아이디 -p
+---------------------------
+4. Nodejs + Mysql 8 버전 이상 추가 작업 : 권한 변경 - ALTER
+ex) ALTER user 아이디@'%' identified with mysql_native_password by '비밀번호'
+
+5. 설정 적용 : flush privileges;
+
+========================
+1. SELECT * FROM 테이블명 : 내용 검색
+ - * 대신 조건에 맞는 컬럼명 : userid, name, password
+ - SELECT * FROM 테이블명 WHERE 검색할 컬럼명 = 값;
+ - SELECT COUNT(*) FROM 테이블명; 현재 테이블 안에 저장된 개수
+ - SELECT COUNT(*) AS '별명' FROM 테이블명; AS '별명'
+ -- SELECT * FROM 테이블명 ORDER BY 컬럼명 정렬방법
+    - ASC 올므차순, DESC 내림차순
+ - SELECT * FROM 테이블명 LIMIT 개수; 한 화면에 보여질 데이터의 개수
+ - SELECT * FROM 테이블명 WHERE 조건=값 ORDER BY 검색조건 LIMIT 화면에 보여질개수;
+
+=========================
+- 이면, 이고 : AND
+- 이거나, 또는 : ORDER
+ex) SELECT * FROM 테이블명 WHERE 조건컬럼명 >= 값 AND 조건컬럼명 <= 값;
+
+지역이 경남이거나 지역이 전남이거나 지역이 경북인 사람으 ㅣ이름과 지역을 검색하시오
+
+SELECT distinct addr FROM userTBL WHERE addr='경남' OR addr='전남' OR addr='경북';
+SELECT distinct(addr) AS '중복제거' FROM userTBL WHERE addr='경남' OR addr='전남' OR addr='경북' ORDER BY addr DESC LIMIT1;
+
+- 이면, 이고 : AND = WHERE 컬럼명 BETWEEN 작은값 AND 큰값
+
+키가 180이상 183 이하인 사람의 이름과 키를 오름차순으로 정렬하여 검색하시오
+
+SELECT name, height FROM userTBL WHERE height BETWEEN 180 AND 183 ORDER by height ASC;
+
+addr ='경남' OR addr='전남' OR addr='경북'
+OR = WHERE 컬럼명 IN(조건1,조건2,조건3);
+
+SELECT * FROM userTBL WHERE addr in ('경남','전남','경북');
+
+==================
+LIKE 유사어 조건 검색 = 없음
+
+% 글자 제한이 없음
+_ 글자 하나
+ex)
+SELECT * FROM 테이블명 WHERE 검색컬럼 LIKE '김%'; - 김으로 시작하는것 모두 찾기
+SELECT * FROM 테이블명 WHERE 검색컬럼 LIKE '%변수명%'; - 변수값을 포함하는 것 다 찾기
+SELECT * FROM 테이블명 WHERE 검색컬럼 LIKE '%수'; - 수로 끝나는것 다 찾기
+
+주소가 서울인 사람의 이름과 키를 출력하시오
+SELECT name, height FROM userTBL WHERE addr='서울';
+SELECT name, height FROM userTBL WHERE addr LIKE '%서울%';
+
+주소가 남으로 끝나는 사람의 이름과, 주소를 출력하시오.
+SELECT name,height FROM userTBL WHERE addr LIKE '%남';
+==================
+서브쿼리 : SELECT 안에 (SELECT)
+
+* 다중행(결과여러 개 나올 때)
+ >= ANY <= ANY : 값이 여러 개가 검색되었을 때 가장 작은 값을 기준으로 검색
+ >= ALL <= ALL : 값이 여러 개가 검색되었을 때 가장 큰 값을 기준으로 검색 
+
+ 주소가 경남인 사람의 키보다 큰 사람의 이름과 키를 출력하시오
+ SELECT name, height FROM userTBL WHERE height >= ANY (SELECT height FROM userTBL WHERE addr='경남');
+ 김경호의 키를 이용해서 김경호의 키보다 큰 사람의 이름과 키를 출력하시오

@@ -1,0 +1,73 @@
+*** SELECT
+* ORDER BY 컬럼명1 [ASC/DESC], 컬럼명2 [ASC/DESC];
+
+USERTBL 이름과 키를 출력하시오(키로 내림차순, 이름으로 오름차순)
+- 테이블 구조 확인하고 컬럼명 : desc usertbl;
+
+ex) 
+SELECT name, height FROM userTBL WHERE height >= 180 ORDER by height DESC, name ASC LIMIT 1;
+
+* Data Filtering : 데이터 가공
+(1) distinct : 중복된 데이터 한 번만 표시
+    - SELECT distinct 컬럼명 FROM 테이블명
+      또는 SELECT distinct(컬럼명) FROM 테이블명
+      SELECT DISTINCT addr AS '중복 제거된 지역' FROM userTBL;
+      SELECT DISTINCT(addr) AS '중복 제거된 지역' FROM userTBL;
+
+(2) 날짜 조건 검색
+    입사년이 1990년 이후에 입사한 사람이 몇 명인지 표시하시오
+    SELECT COUNT(emp_no) FROM employees WHERE hire_date >= '1990-01-01';
+
+    - 사원번호와 입사년월일을 출력하시오(단 입사년월일로 오름차순 하시오)
+      SELECT emp_no, hire_date FROM employees WHERE hire_date >= '1990-01-01' ORDER BY hire_date ASC limit 10;
+
+그룹화 함수는 집계함수가 꼭 있어야 됨
+COUNT, MAX, MIN, AVG, SUM ~ GROUP BY
+HAVING : 그룹화한 결과의 조건
+
+
+
+이미 만들어져 있는 회원테이블 -> 복사해서 테스트용으로 사용할 때
+1) 내용까지 복사
+2) 구조만 복사
+
+1) CREATE + SELECT
+2) CREATE + SELECT ~ WHERE
+
+CREATE TABLE 복사할 테이블 이름 (SELECT ~)
+** 모두 복사
+CREATE TABLE buyTBL_COPY (SELECT * FROM buyTBL); 
+** 구조만 복사
+CREATE TABLE buyTBL_TEMP (SELECT * FROM buyTBL where 1<>1);
+
+
+-------------------------------
+*** SELECT * FROM 테이블명 (WHERE ~) (GROUP BY ~) (ORDER BY ~) (LIMIT 개수);
+
+테이블 이름은 buyTBL, 아이디, 수량을 출력하시오. 단 이름은 하나 amount의 전체의 합을 구하시오
+SELECT userid, sum(amount) FROM buyTBL GROUP BY userid;
+
+SELECT userid, ROUND ( AVG(amount), 0) ASavg FROM buyTBL GROUP BY userid;
+
+---------------
+CREATE TABLE company(
+    comp_name varchar(20),
+    comp_cars varchar(20),
+    cars_price int,
+    cars_stock int
+);
+INSERT INTO company VALUES('현대차','아반떼',2000,10);
+INSERT INTO company VALUES('현대차','아반떼',1500,5);
+INSERT INTO company VALUES('현대차','아반떼',3000,1);
+
+INSERT INTO company VALUES('기아차','모닝',1000,2);
+INSERT INTO company VALUES('기아차','모닝',2000,7);
+INSERT INTO company VALUES('기아차','K3',3000,11);
+
+INSERT INTO company VALUES('쌍용차','코란도',3000,77);
+INSERT INTO company VALUES('쌍용차','코란도',5000,22);
+
+SELECT comp_name, SUM(cars_stock) AS stock FROM company GROUP BY comp_name;
+SELECT comp_name, comp_cars, SUM(cars_price), SUM(cars_stock) FROM company GROUP BY comp_name, comp_cars;
+
+SELECT userid, SUM(price * amount) AS '총구매액' FROM buyTBL GROUP by userid HAVING SUM(price * amount)>1000 ORDER By userid;

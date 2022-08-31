@@ -1,0 +1,9 @@
+1. 계정생성(p.170)
+    - id, pwd : database (아이디와 동일하게)
+    - shop, shop
+*** CREATE  (없는걸 만들 때 : 생성)
+*** DROP (있는 걸 없앨 때 : 제거)
+****** SELECT(자료 검색)
+****** INSERT(자료 삽입)
+****** UPDATE(자료 수정)
+****** DELETE(자료 삭제)

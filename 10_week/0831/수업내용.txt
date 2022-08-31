@@ -76,3 +76,18 @@ SELECT name, height FROM userTBL WHERE height > (select height FROM userTBL WHER
 
 SELECT distinct emp_no FROM titles ORDER BY emp_no ASC LIMIT 5, 10;
 SELECT distinct emp_no FROM titles ORDER BY emp_no ASC LIMIT 10 OFFSET 5;
+
+===============
+테이블 복사
+1. 내용까지 모두 복사
+CREATE TABLE buyTBL_copy AS SELECT * FROM buyTBL;
+CREATE TABLE buyTBL_copy2 AS SELECT userID, price, amount FROM buyTBL;
+
+2. 구조만 복사
+CREATE TABLE buyTBL_copy3 AS SELECT * FROM buyTBL WHERE 1<>1;
+
+-----------------
+GROUP BY : 집계함수와 꼭 같이 사용
+- 집계함수 ㅣ MAX, MIN, SUM, COUNT, AVG
+
+SELECT prodName, SUM(price) FROM buyTBL GROUP BY prodNAME HAVING SUM(price) >=500;

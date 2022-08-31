@@ -107,3 +107,31 @@ CREATE TABLE board(
 );
 
 INSERT INTO board VALUES(NULL,'공지사항입니다' ,"게시물 내용입니다","부산",NOW(),"1234",null,'10.100.205.3','employees.sql');
+
+======================
+내장함수
+
+SELECT IF(10>1, 'TRUE', 'FALSE');
+
+태어난 날이 1965 이후 출생이면 60s 아니면 50s로 표현하시오
+SELECT birth_date, IF(birth_date >= '1965-01-01', '60s','50s') as 'Generation' FROM employees LIMIT 40;
+
+CREATE TABLE users(
+    userid varchar(10),
+    passwd varchar(10)
+);
+
+INSERT INTO users VALUES('busanit','1234');
+INSERT INTO users VALUES('seoulit',NULL);
+
+SELECT IFNULL(passwd, '11111') FROM users;
+
+
+create table order_price(
+    price int,
+    mount int
+);
+INSERT INTO order_price VALUES(1000,10);
+INSERT INTO order_price VALUES(5000,NULL);
+
+SELECT (price * IFNULL(mount, 0)) AS SUM FROM order_price;

@@ -7,3 +7,33 @@
 ****** INSERT(자료 삽입)
 ****** UPDATE(자료 수정)
 ****** DELETE(자료 삭제)
+CREATE user 'shop'@'%' identified by 'shop';
+
+2. 권한 설정 : grant
+
+GRANT all ON *.* TO 'shop'@'%' with grant option;
+flush privileges;
+exit; 
+mysql -ushop -p
+show databases;
+CREATE database shop;
+show databases;
+use shop;
+
+show tables;
+
+회원가입 테이블(파일)만들기
+CREATE TABLE register(
+    userid varchar(20) not null,
+    passwd varchar(20) not null,
+    username varchar(10) not null,
+    hobby char(1),
+    regdate date
+)
+desc register;
+DROP TABLE register;
+show tables;
+
+==================
+데이터 검색 순서
+SELECT * FROM 테이블명 (WHERE~) (GROUP BY ~)(HAVING~)(ORDER BY~)(LIMIT~)

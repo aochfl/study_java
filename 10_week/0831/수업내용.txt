@@ -91,3 +91,19 @@ GROUP BY : 집계함수와 꼭 같이 사용
 - 집계함수 ㅣ MAX, MIN, SUM, COUNT, AVG
 
 SELECT prodName, SUM(price) FROM buyTBL GROUP BY prodNAME HAVING SUM(price) >=500;
+
+
+CREATE TABLE board(
+    board_id int not null auto_increment,
+    board_subject varchar(200) not null,
+    board_content text not null,
+    board_writer varchar(10) not null,
+    board_date date not null,
+    board_pwd char(4) not null,
+    board_visit int default 0,
+    board_ip char(15),
+    board_filename varchar(200),
+    primary key(board_id)
+);
+
+INSERT INTO board VALUES(NULL,'공지사항입니다' ,"게시물 내용입니다","부산",NOW(),"1234",null,'10.100.205.3','employees.sql');

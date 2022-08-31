@@ -37,3 +37,42 @@ show tables;
 ==================
 데이터 검색 순서
 SELECT * FROM 테이블명 (WHERE~) (GROUP BY ~)(HAVING~)(ORDER BY~)(LIMIT~)
+
+emp_no 컬럼이 10001인 사람을 출력하시오
+emp_no를 내림차순으로 정렬하시오
+SELECT from_date, to_date FROM titles WHERE emp_no=10001 ORDER BY emp_no DESC LIMIT 1;
+
+조건 검색 : titles 테이블
+from_date 1990 이후 ~ to_date 2000 이전인 사람의 사원번호만 출력하시오
+SELECT emp_no, from_date, to_date from titles WHERE from_date > '1990-01-01' and to_date < '2000-01-01';
+
+
+사용자테이블에서 태어난 해가 1970년 이후 이고 키가 182이상인 사람
+select userID, name FROM usertbl WHERE birthYear > 1970 and height >= 182;
+
+
+
+키가 180이상 이면서 183 이하인 사람의 이름과 키
+SELECT name, height FROM usertbl WHERE height BETWEEN 180 and 183;
+
+지역이 경남이거나 경북인 사람의 이름과 지역을 출력하시오
+SELECT name, addr FROM usertbl WHERE addr IN ('경남','경북');
+
+LIKE : 유사어 검색조건
+- WHERE 컬럼명 LIKE 검색조건
+- % 글자수 제한 없고 _ 한 글자
+ex) 김%, %종%, %부산
+
+사용자 테이블에서 성이 김씨인 사람을 이름과 키를 출력하시오
+SELECT name,height FROM usertbl WHERE name like "김%";
+
+SELECT count(userid) FROM userTBL WHERE name LIKE '%승%';
+
+지역이름이 중복된 값은 제거한 후 전체를 출력하시오
+SELECT distinct addr as '중복제거든지역' FROM userTBL;
+
+SELECT name, height FROM userTBL WHERE height > (select height FROM userTBL WHERE name="김경호"); 
+
+
+SELECT distinct emp_no FROM titles ORDER BY emp_no ASC LIMIT 5, 10;
+SELECT distinct emp_no FROM titles ORDER BY emp_no ASC LIMIT 10 OFFSET 5;

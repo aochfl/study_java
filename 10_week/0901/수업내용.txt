@@ -83,3 +83,29 @@ SELECT
     FROm userTBL as u, cartTBL as c WHERE u.userid=c.userid and u.userid='seoulit';
 
 
+=====================================
+JOIN : 검색
+
+UPDATE, DELETE
+한쪽테이블에서 수정, 삭제
+
+CREATE TABLE users(
+    userid varchar(20) not null primary key,
+    passwd varchar(20) not null
+);
+INSERT INTO users VALUES('red','1234'),('blue','12345'),('green','123456');
+
+DROP TABLE carts;
+CREATE TABLE carts(
+    id int not null auto_increment primary key,
+    userid varchar(20) not null,
+    cart_productName varchar(20),
+    FOREIGN KEY(userid) references users(userid) ON UPDATE CASCADE ON DELETE CASCADE
+);
+INSERT INTO carts VALUES(NULL,'red','옥션'),(NULL,'red','지마켓'),(NULL,'blue','쿠팡');
+
+UPDATE users SET userid='red' WHERE userid='yellow' ;
+DELETE FROM users WHERE userid='yellow';
+
+SELECT * FROM 테이블1, 테이블2 WHERE 테이블1.PK=테이블2.FK AND 조건;
+SELECT U.*, C.cart_productName  FROM users as U, carts as C WHERE U.userid=C.userid AND U.userid="blue";

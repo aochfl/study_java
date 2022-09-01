@@ -1,0 +1,85 @@
+SELECT DATE_FORMAT(now(), '%H.%i.%S');
+
+****** 파일 업로드 : 파일이름 or 폴더이름
+***** Log File : 접속한 날짜, 시간 + 무슨작업을 했을 때
+-> 동일 이름 생길때 덮어쓰기용으로 쓰면 좋음
+SELECT UNIX_TIMESTAMP(now());
+
+SELECT UNIX_TIMESTAMP(current_timestamp());
+
+----------------------
+Object 타입(자바스크립트)
+const result = {"userid": 'busanit', "passwd": '1234'}
+
+
+select emp_no, gender from employees limit 1;
+
+SELECT JSON_OBJECT('emp_no',emp_no, 'gender',gender) FROM employees LIMIT 1;
+
+
+==============================
+JOIN : 불필요한 데이터를 분리시켜서 필요할 때만 연결해서 사용함 2~3 
+        정규화 - 그림으로 표시(ERD)
+
+PK : 유일하게나를 구분해 주는 것
+FK : 내가 필요한 테이블과 연결해서 사용할 때
+--------> pk - fk는 이름과 타입 동일해야 함(복사해서 사용)
+
+중요도 따라서 
+userTBL(Primary key) buyTBL(Foreign key)
+
+userid : PK
+CREATE TABLE userTBL(
+    userid varchar(20) not null,
+    username varchar(20) not null,
+    height smallint,
+    mDate date,
+    primary key(userid)
+);
+
+CREATE TABLE buyTBL(
+    prodID int not null auto_increment,
+    userid varchar(20) not null,
+    prodName varchar(100) not null,
+    prodPrice int default 0,
+    primary key(prodID),
+    FOREIGN KEY(userid) references userTBL(userid)
+);
+
+INSERT INTO userTBL VALUES
+('busanit','1234',190,NOW()),('seoulit','4567',180,sysdate());
+
+INSERT INTO buyTBL VALUES(NULL,'busanit','옥션',20000);
+INSERT INTO buyTBL VALUES(NULL,'busanit','지마켓',10000);
+INSERT INTO buyTBL VALUES(NULL,'seoulit','쿠팡',50000);
+
+JOIN : 내부조인(테이블1 INNER JOIN 테이블2 ON)
+
+SELECT U.userid, B.prodName, B.prodPrice FROM userTBL AS U INNER JOIN buyTBL AS B ON U.userid=B.userid WHERE U.userid='busanit';
+
+JOIN2 : 내부조인 - SELECT * FROM 테이블1, 테이블2 WHERE 조건;
+
+SELECT u.userid, b.prodName, b.prodPrice FROM userTBL AS u, buyTBL AS b WHERE u.userid = b.userid and u.userid = 'busanit';
+
+shop : 사용자, 상품, 카트정보
+CREATE TABLE cartTBL(
+    cartID int not null auto_increment,
+    userid varchar(20) not null,
+    cart_prodName varchar(100) not null,
+    cart_prodPrice int default 0,
+    cart_regdate date,
+    primary key(cartID),
+    FOREIGN KEY(userid) references userTBL(userid)
+);
+INSERT INTO cartTBL VALUES(null,"busanit","카트옥션",7777,NOW());
+INSERT INTO cartTBL VALUES(null,"seoulit","카트지마켓",22222,NOW());
+
+SELECT 
+    c.cartID,
+    c.cart_prodName, 
+    c.cart_prodPrice,
+    c.cart_regDate,
+    u.userid
+    FROm userTBL as u, cartTBL as c WHERE u.userid=c.userid and u.userid='seoulit';
+
+

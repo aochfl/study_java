@@ -1,0 +1,63 @@
+DROP DATABASE IF EXISTS shopdb;
+CREATE DATABASE shopdb;
+use shopdb;
+
+
+CREATE TABLE uesrs(
+    id unique,
+    primary key(id)
+);
+CREATE TABLE carts(
+    id not null,
+    foreignkey() references 
+);
+
+기본키(pk) : not null, 중복x - 유일하게 나를 구분
+외래키(fk) : join
+Unique : null 일수 있지만 중복x
+check - check(gender in('M','F'));
+default 
+
+null : not null
+
+VIEW : 보안 : 복사 x, 작업을 편리하게함
+1. 물리적 링크 : 원본에 수정/삭제 : O
+2. 논리적 링크 : 원본에 수정/삭제 : x - VIEW
+
+=====
+CREATE DATABASE erp;
+use erp;
+CREATE TABLE users(
+    id int not null auto_increment,
+    userid varchar(20),
+    passwd varchar(20),
+    zip char(5),
+    addr varchar(100),
+    primary key(id)
+);
+INSERT INTO users VALUES (NULL, 'busanit', '12345', '00000', '부산광역시');
+INSERT INTO users VALUES (NULL, 'seoulit', '12345', '55555', '서울특별시');
+INSERT INTO users VALUES (NULL, 'daegeonit', '12345', '77777', '대전광역시');
+
+CREATE VIEW users_v AS SELECT id, zip, addr FROM users;
+
+UPDATE users SET 바꿀컬럼명=값 WHERE 찾을컬럼=값;
+UPDATE users_v SET zip='33333', addr='KOREA' WHERE id=2;
+
+CREATE TABLE carts(
+    cart_id int not null auto_increment,
+    id int not null,
+    cart_prodName varchar(100),
+    primary key(cart_id),
+    FOREIGN KEY(id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+INSERT INTO carts VALUES(NULL, 2, '현대자동차 타이어');
+
+
+SELECT C.cart_id, U.userid, C.cart_prodName FROM users as U, carts as C WHERE U.id=C.id and U.userid='seoulit';
+
+VIEW 보안상 필요, 조인 때문에 사용
+CREATE VIEW cart_v AS SELECT C.cart_id, U.userid, C.cart_prodName FROM users as U, carts as C WHERE U.id=C.id and U.userid ='seoulit';
+
+select * from cart_v;
+

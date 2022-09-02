@@ -61,3 +61,22 @@ CREATE VIEW cart_v AS SELECT C.cart_id, U.userid, C.cart_prodName FROM users as 
 
 select * from cart_v;
 
+use erp;
+CREATE TABLE userTBL(
+    userid varchar(20) not null,
+    username varchar(20) not null,
+    primary key(userid)
+);
+INSERT INTO userTBL VALUES('busan','부산광역시'),('seoul','서울특별시');
+CREATE TABLE buyTBL(
+    buy_id int not null auto_increment,
+    userid varchar(20) not null,
+    buy_prodname varchar(100),
+    primary key(buy_id),
+    FOREIGN KEY(userid) REFERENCES userTBL(userid) ON UPDATE CASCADE ON DELETE CASCADE
+);
+INSERT INTO buyTBL VALUES(NULL, 'busan','옥션'),(NULL, 'busan','지마켓'),(NULL, 'seoul','yes24');
+
+UPDATE userTBL set userid='busanit' WHERE userid='busan';
+
+DELETE FROM userTBL WHERE userid= 'busanit';

@@ -1,0 +1,17 @@
+1. 프로젝트 이름에 맞게 계정 : MALL
+(CREATE DATABASE MALL 이름과 같은 DB생성)
+
+2. use MALL;
+
+3. 테이블 작업 : 적절하게 테이블 분리(필요시 조인)
+                - pk ,fk, cascade
+                - 데이터 타입 설정 : varchar, char, int, date, text
+                - 컬럼이름 : 테이블이름_컬럼이름
+                            member_userid
+                            items_prodName
+                            order_prodName
+
+4. 생성(CREATE) 제거(DROP)
+    SELECT, INSERT
+    DELETE ~ WHERE
+    UPDATE ~ WHERE

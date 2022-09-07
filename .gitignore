@@ -1,3 +1,5 @@
 node_modules
 node_modules/*
 *.dump
+_test_*/*
+_test_*

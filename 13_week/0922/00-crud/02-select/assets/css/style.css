@@ -1,0 +1,26 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+tr {
+    height: 40px;
+}
+td {
+    border: 1px solid #ccc;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+input {
+    width: 100%;
+    outline: none;
+    padding: 10px 20px;
+}

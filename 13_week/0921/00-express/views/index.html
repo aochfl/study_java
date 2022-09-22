@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcom Busan it</title>
+    </head>
+    <body>
+        <h1>Hello World, NodeJS</h1>
+        <table border="1px">
+            <tr>
+                <td>구분</td>
+                <td>id</td>
+                <td>지역</td>
+                <td>비밀번호</td>
+                <td>H.P</td>
+                <td>email</td>
+                <td>권한</td>
+                <td>수정/삭제</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>busanit</td>
+                <td><a href="/getUser/5">부산광역시</a></td>
+                <td>*****</td>
+                <td>010-1234-1234</td>
+                <td>busanit@busanit.ac.kr</td>
+                <td>
+                    <select>
+                        <option>최고관리자</option>
+                        <option>부서장</option>
+                        <option>사원</option>
+                        <option>Gudet</option>
+                    </select>
+                </td>
+                <td>수정/<a href="#" onClick="return confirm(`삭제하시겠습니까`);">삭제</a></td>
+            </tr>
+        </table>
+    </body>
+</html>

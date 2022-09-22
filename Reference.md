@@ -17,3 +17,8 @@ https://fontawesome.com/
 ## 색상 참조
 
 https://material.io/design/color/the-color-system.html#state
+
+## node 관련
+
+npm library  
+https://www.npmjs.com/

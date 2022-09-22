@@ -1,32 +1,34 @@
-설치해야할 프로그램
-===
-Notepad++ 설치   
-vscode 설치   
+# 설치해야할 프로그램
+
+Notepad++ 설치  
+vscode 설치  
 https://nodejs.org/ko/
 
-nodejs 설치   
+nodejs 설치  
 https://nodejs.org/ko/
 
+# Notepad++ 설정
 
-
-Notepad++ 설정
-=======
 1. 플러그인 메뉴탭 - Plugins Admin
 2. NppExec를 찾아서 상단의 Install로 설치
 3. Notepad 재시작
 4. 플러그인 메뉴의 NppExec - Execute 실행
 5. 아래 항목 입력후 save
+
 ```
 cd $(CURRENT_DIRECTORY)
 javac $(FILE_NAME) -encoding UTF-8
 ```
+
 6. Script name 항목에 Compile 입력후 save
 7. 플러그인 메뉴의 NppExec - Execute 한번더 실행
 8. 아래 항목 입력후 save
+
 ```
 cd $(CURRENT_DIRECTORY)
 java $(NAME_PART)
 ```
+
 9. Script name 항목에 Run 입력후 save
 10. 플러그인 메뉴 - NppExec - Advanced Option 실행
 11. 상단에 "Place to the Macro submenu" 체크
@@ -37,7 +39,13 @@ java $(NAME_PART)
 16. 약 140번째 항목쯤에 Ctrl+1, Ctrl+2로 등록된 단축키를삭제 (단축키는 원하는 대로 설정)
 17. 상단의 Plugin commands 탭에서 Compile과 Run을 찾아서 Ctrl+1,2로 설정(단축키는 원하는 대로 설정)
 
-* * *   
-vsCode
-======
-확장 프로그램 live server 
+---
+
+# vsCode
+
+확장 프로그램 live server
+
+vsCode 터미널로 보안관련 오류가 나는경우
+
+1. Executionpolicy 입력하여 결과가 Restricted 인 경우
+2. Set-ExecutionPolicy Unrestricted

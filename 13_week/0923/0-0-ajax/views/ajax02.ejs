@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <select id="sel" onChange="gu(this.value);">
+            <option>도시를 선택하세요</option>
+        </select>
+
+        <select id="gu">
+            <option>지역구를 선택하세요</option>
+        </select>
+
+        <script>
+            window.onload = function () {
+                let a = "<option>도시를 선택하세요</option>";
+                $.ajax({
+                    url: "/getSi",
+                    method: "post",
+                    contentType: "application/json",
+                    success: function (result) {
+                        for (let i = 0; i < result.length; i++) {
+                            a += `<option value=${result[i].si}>${result[i].si}</option>`;
+                        }
+                        $("#sel").html(a);
+                    },
+                });
+            };
+
+            function gu(si) {
+                let a = "<option>지역구를 선택하세요</option>";
+                let test = '="';
+                $.ajax({
+                    url: "/getGu",
+                    method: "post",
+                    contentType: "application/json",
+                    data: JSON.stringify({ si }),
+                    success: function (result) {
+                        for (let i = 0; i < result.length; i++) {
+                            a += `<option value=${result[i].gu}>${result[i].gu}</option>`;
+                        }
+                        $("#gu").html(a);
+                    },
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/addUser">
+        userid : <input type="text" name="userid" id="userid" />
+        <button type="button" onClick="checkID();">checkID</button>
+        <span>아이디를 입력하세요</span><br>
+        passwd : <input type="text" name="passwd" id="passwd" /><br>
+        username : <input type="text" name="username" id="username" /><br>
+        <input type="submit" value="register">
+    </form>
+
+    <script>
+        function checkID() {
+            // if( document.querySelector("#userid").value == "" ) {
+            //     alert("아이디 입력해 주세요.");
+            //     document.getElementById("userid").focus();
+            //     return false;
+            // }
+            if( $("#userid").val() == "" ) {
+                alert("아이디를 입력해 주세요.");
+                $("#userid").focus();
+                return false;
+            
+            }else{
+                const jsObj = {
+                    userid: $("#userid").val()
+                }
+
+                $.ajax({
+                    url: "/checkID",
+                    method: "post",
+                    contentType: "application/json",
+                    data: JSON.stringify(jsObj),
+                    success: function(result) {
+                        if( result == "No") {
+                            $("span").html("<b><i>사용할 수 없는 아이디입니다.</i></b>");
+                            $("#userid").val("");
+                        }else{
+                            $("span").html("사용할 수 있는 아이디입니다.");
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

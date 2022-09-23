@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <style>
+            a{
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+            }
+            a:hover{
+                text-decoration: underline;
+                color:red
+            }
+        </style>
+    </head>
+    <body>
+        <h3>회원목록</h3>
+        <table border="1" style="width: 100%">
+            <tr>
+                <th>ID</th>
+                <th>UserId</th>
+                <th>UserName</th>
+                <th>Grade</th>
+                <th>Regdate</th>
+                <th>Update/Delete</th>
+            </tr>
+            <% if(result.length ==0){ %>
+            <tr>
+                <td colspan="6">등록된 회원이 없습니다</td>
+            </tr>
+
+            <% } else { for(let i = 0 ; i < result.length ; i++) {%>
+            <tr>
+                <td><%= result[i].id %></td>
+                <td><%= result[i].userid %></td>
+                <td><a href="/viewUser/<%= result[i].id %>"><%= result[i].username %></td></a>
+                <td>
+                    <select onChange="grade(this.value, '<%= result[i].id %>');">
+                        <option value="최고관리자" <% if(result[i].grade=='최고관리자'){ %> selected <% } %>>최고관리자</option>
+                        <option value="사원" <% if(result[i].grade=='사원'){ %> selected <% } %>>사원</option>
+                        <option value="일반" <% if(result[i].grade=='일반'){ %> selected <% } %>>일반</option>
+                    </select>
+                </td>
+                <td><%= result[i].regdate %></td>
+                <td>
+                    <a href="/upUser/<%= result[i].id %>">사용자 수정</a>
+                    <a href="/delUser/<%= result[i].id %>" onClick="return confirm('삭제?');">사용자 삭제</a>
+                </td>
+            </tr>
+            <%} } %>
+        </table>
+        <script>
+            function grade(gradeValue,idValue){
+                $.ajax({
+                    url:"/updateGrade",
+                    method: "post",
+                    contentType: "application/json",
+                    data:JSON.stringify({gradeValue,idValue}),
+                    success: function(result){
+                        alert(result.grade+"(으)로 변경되었습니다")
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>
